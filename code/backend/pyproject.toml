@@ -1,0 +1,25 @@
+[project]
+name = "text2sql-project"
+version = "0.1.0"
+description = "CSE573 Group 27 — Text2SQL with LLM-Modulo"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.0.0",
+    "sqlglot>=20.0.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+]
+
+# On Linux (i.e. the HPC cluster) pull torch from the CUDA 12.4 wheel index.
+# On macOS/Windows uv falls back to the default PyPI torch (CPU).
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu124", marker = "sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

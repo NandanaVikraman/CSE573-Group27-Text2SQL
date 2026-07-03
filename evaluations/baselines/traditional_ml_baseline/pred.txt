@@ -1,0 +1,1034 @@
+select count ( * ) from stadium
+select count ( * ) from concert
+select name , country , age from stadium order by age desc
+select name , age from stadium order by age desc
+select avg ( age ) , min ( age ) , max ( age ) from stadium
+select avg ( age ) , min ( age ) , max ( age ) from stadium
+select t2 . name , t2 . year from concert as t1 join singer as t2 on t1 . singer_id = t2 . singer_id order by t1 . year limit 1
+select t2 . name , t2 . lowest from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id join singer as t3 on t1 . concert_id = t3 . stadium_id where t3 . lowest = ( select min ( age ) from stadium )
+select distinct country from stadium where age > 20
+select distinct country from stadium where age > 20
+select country , count ( * ) , country from stadium group by country
+select count ( * ) , country from stadium group by country
+select name from stadium where age > ( select avg ( age ) from stadium )
+select name from stadium where capacity > ( select avg ( age ) from stadium )
+select location , song_name from singer where age between 5000 and 10000
+select singer_id , location from stadium where capacity between 5000 and 10000
+select max ( capacity ) , max ( is_male ) from singer
+select avg ( is_male ) , max ( is_male ) from concert
+select t2 . name , t2 . country from concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id group by t2 . concert_id order by avg ( is_male ) desc limit 1
+select t2 . name , t2 . lowest from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id group by t2 . name order by avg ( is_male ) desc limit 1
+select count ( * ) from singer_in_concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id where t1 . year = 2014 or t1 . theme = t2 . stadium_id where t2 . country = ' 2015 '
+select count ( * ) from singer_in_concert where country = ' 2014 ' or country = ' 2015 '
+select t2 . name , count ( * ) from concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id group by t2 . name
+select count ( * ) , stadium from concert group by stadium
+select t2 . name , t2 . country from concert as t1 join singer as t2 on t1 . singer_id = t2 . singer_id where t1 . singer_id = ' 2014 ' group by t1 . singer_id order by count ( * ) desc limit 1
+select t2 . name , t2 . year from concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id where t1 . 2013 > 2013 group by t1 . concert_id order by count ( * ) desc limit 1
+select year from stadium group by year order by count ( * ) desc limit 1
+select year from singer_in_concert group by year order by count ( * ) desc limit 1
+select name from stadium where singer_id not in ( select concert_id from concert )
+select name from singer where singer_id not in ( select concert_id from concert where year != " concerts " )
+select country from stadium where age > 40 intersect select country from stadium where age < 30
+select t2 . song_name from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t1 . singer_id != ' 2014 ' and t1 . year != 2014
+select song_name from stadium except select t2 . name from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t1 . concert_name = ' 2014 '
+select t2 . name , t2 . country from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id group by t2 . singer_id
+select t2 . name , t2 . year from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t1 . year = concert
+select t2 . name , count ( * ) from concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id group by t1 . concert_id
+select t2 . name , count ( * ) from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id group by t2 . name
+select t2 . name from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t1 . singer_id = t2 . singer_id where t1 . country = " 2014 "
+select t2 . name from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t1 . concert_name = t2 . stadium_id where t1 . concert_name = ' 2014 '
+select t2 . name , t2 . lowest from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t2 . song_name like ' % hey % '
+select t2 . name , t2 . country from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id where t1 . song_name like ' % hey % '
+select t2 . name , t2 . location from concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id where t1 . concert_name = ' 2014 ' and t1 . year = 2014
+select t2 . name , t2 . year from concert as t1 join singer as t2 on t1 . singer_id = t2 . stadium_id where t1 . concert_name = ' 2014 ' intersect select t2 . name , t1 . year from concert as t1 join singer as t2 on t1 . concert_id = t2 . stadium_id where t2 . country = ' 2014 '
+select count ( * ) from singer_in_concert where capacity = ( select max ( is_male ) from concert )
+select count ( * ) from singer_in_concert where age = ( select max ( capacity ) from singer )
+select count ( * ) from pets where weight < 10
+select count ( * ) from pets where age > 10
+select weight from student where age = ( select min ( age ) from student )
+select much from student where stuid in ( select t1 . stuid from has_pet as t1 join pets as t2 on t1 . petid = t2 . petid where t2 . pet_age = ( select min ( age ) from pets )
+select max ( weight ) , petid from pets group by weight
+select max ( weight ) , petid from pets group by type
+select count ( * ) from student where age > 20
+select count ( * ) from student where age > 20
+select count ( * ) from student where sex = ' f ' and sex = ' f '
+select count ( * ) from pets where sex = ' f ' and sex = " f "
+select count ( distinct type ) from pets
+select count ( distinct stuid ) from pets
+select petid from pets where sex = " cat " or pet_age = " dog "
+select petid from pets where sex = ' cat ' or pet_age = " dog "
+select distinct t1 . fname from student as t1 join pets as t2 on t1 . petid = t2 . petid where t2 . pet_age = " cat " intersect select t1 . petid from pets as t1 join pets as t2 on t1 . petid = t2 . stuid where t2 . pet_age = ' dog '
+select t1 . fname , t1 . lname from student as t1 join pets as t2 on t1 . petid = t2 . stuid join student as t3 on t2 . stuid = t3 . stuid where t3 . pettype = ' dogs ' intersect select t1 . lname from student as t1 join pets as t2 on t1 . petid = t2 . stuid where t2 . pettype = ' dogs '
+select major , age from pets where sex = " f " and pet_age != " cat "
+select major , major from student where pet_age != " cat "
+select petid from pets except select petid from pets where sex = " cat "
+select petid from student except select stuid from pets where stuid not in ( select stuid from pets )
+select petid , age from student where sex = ' f ' except select t1 . pettype , t1 . age from pets as t1 join pets as t2 on t1 . petid = t2 . petid where t1 . pet_age = " pet "
+select fname from student where stuid not in ( select stuid from pets where pet_age = " cat " )
+select type , weight from pets order by age desc limit 1
+select t2 . stuid , t1 . stuid from has_pet as t1 join pets as t2 on t1 . petid = t2 . petid where t1 . pettype = " weigh "
+select major , weight from student where age > 1
+select stuid , weight from pets where age > 1
+select avg ( age ) , max ( age ) from pets group by type
+select avg ( age ) , max ( age ) , type from student group by sex
+select avg ( weight ) , weight from pets group by weight
+select type , avg ( weight ) from pets group by type
+select distinct t1 . fname , t1 . age from student as t1 join pets as t2 on t1 . petid = t2 . petid group by t1 . petid having count ( * ) >= 1
+select distinct t1 . fname , t1 . petid from student as t1 join pets as t2 on t1 . petid = t2 . petid
+select petid from pets where lname = ' smith '
+select t1 . petid from has_pet as t1 join pets as t2 on t1 . petid = t2 . petid join student as t3 on t3 . stuid = t2 . stuid where t3 . fname = " smith " and t1 . petid = ' smith '
+select count ( * ) , advisor from student group by advisor
+select count ( * ) , t1 . pettype from student as t1 join pets as t2 on t1 . petid = t2 . petid group by t1 . petid
+select t1 . fname , t1 . gender from has_pet as t1 join pets as t2 on t1 . petid = t2 . stuid group by t1 . petid having count ( * ) > 1
+select t1 . fname , t1 . gender from student as t1 join pets as t2 on t1 . petid = t2 . stuid group by t1 . petid having count ( * ) > 1
+select t2 . lname from student as t1 join pets as t2 on t1 . petid = t2 . petid where t1 . age = cat and t1 . pettype = t2 . 3 where t2 . age = 3
+select t1 . lname from student as t1 join pets as t2 on t1 . petid = t2 . petid where t2 . age = 3
+select avg ( age ) from student where petid not in ( select petid from pets group by petid
+select avg ( age ) from student where petid not in ( select petid from pets )
+select count ( * ) from cars_data
+select count ( * ) from cars_data
+select t1 . countryid , t1 . maker , count ( * ) from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . makeid
+select t1 . makeid , t1 . modelid , count ( * ) from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . makeid
+select count ( * ) from continents
+select count ( * ) from continents
+select t1 . id , t1 . id , count ( * ) , t1 . modelid from countries as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . modelid
+select t1 . id , t1 . id , t2 . mpg from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . makeid
+select makeid from cars_data where cylinders = ( select makeid from cars_data group by maker order by count ( * ) desc limit 1
+select edispl from cars_data group by cylinders order by count ( * ) asc limit 1
+select weight from car_makers where weight < ( select avg ( weight ) from car_makers )
+select horsepower from cars_data where weight < ( select avg ( weight ) from cars_data )
+select t1 . of from cars_data as t1 join cars_data as t2 on t1 . makeid = t2 . makeid where t2 . maker = ' 1970 '
+select distinct t1 . id from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid where t2 . mpg = ' car '
+select make , fullname from car_makers order by year asc limit 1
+select maker from car_makers order by year asc limit 1
+select distinct distinct distinct distinct weight from cars_data where cylinders > 1980
+select distinct country from car_makers where fullname > 1980
+select t2 . maker , count ( * ) from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . modelid group by t1 . makeid
+select t1 . makeid , count ( * ) from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . makeid
+select t1 . maker from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . makeid order by count ( * ) desc limit 1
+select country from cars_data group by country order by count ( * ) desc limit 1
+select t2 . id , t1 . id from model_list as t1 join cars_data as t2 on t1 . contid = t2 . modelid group by t1 . makeid
+select t2 . id , t2 . maker from continents as t1 join car_makers as t2 on t1 . contid = t2 . makeid group by t1 . contid
+select t2 . weight from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . id join cars_data as t3 on t1 . id = t3 . id where t3 . horsepower = ' amc ' and t1 . horsepower = t3 . weight <= 5
+select t1 . mpg from countries as t1 join cars_data as t2 on t1 . id = t2 . id join cars_data as t3 on t2 . id = t3 . modelid where t3 . country = " car " and t3 . maker = t3 . fullname
+select count ( * ) from cars_data where country = " bangladesh "
+select count ( * ) from car_names where france = 1
+select count ( * ) from cars_data where country = ' usa '
+select count ( * ) from cars_data where country = ' united states '
+select avg ( weight ) from car_makers where fullname like " 4 : % "
+select avg ( weight ) from cars_data where fullname like " 4 : % "
+select min ( t2 . weight ) from car_names as t1 join cars_data as t2 on t1 . id = t2 . id where t1 . weight = 8
+select min ( weight ) from cars_data where horsepower = " 8 "
+select contid , continent from continents
+select contid , continent from continents
+select makeid , cylinders from cars_data where cylinders >= ' group by cylinders having count ( * ) >= 2
+select t1 . id , t1 . model from car_names as t1 join car_makers as t2 on t1 . contid = t2 . contid join car_names as t3 on t2 . modelid = t3 . id where t3 . maker = ' car ' group by t1 . contid having count ( * ) >= 1
+select count ( * ) from cars_data where horsepower > 150
+select count ( * ) from cars_data where horsepower > 150
+select year , avg ( weight ) , year from car_makers group by year
+select year , weight from car_makers group by year
+select country from car_makers where country = " europe " and horsepower != " europe "
+select t2 . continent from car_names as t1 join car_makers as t2 on t1 . contid = t2 . contid group by t1 . contid having count ( * ) >= 3
+select max ( t2 . weight ) , t2 . weight from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . modelid where t1 . edispl = 3
+select max ( weight ) from cars_data where edispl = 3 and horsepower = '
+select t1 . modelid from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . modelid order by count ( * ) desc limit 1
+select car from cars_data group by maker order by count ( * ) desc limit 1
+select avg ( fullname ) from car_makers where fullname < 1980
+select avg ( weight ) from cars_data where horsepower < 1980
+select avg ( edispl ) from car_makers
+select avg ( edispl ) from car_makers
+select max ( different ) , different from cars_data group by edispl
+select max ( weight ) , cylinders from cars_data group by horsepower
+select t1 . makeid from car_names as t1 join car_makers as t2 on t1 . makeid = t2 . makeid group by t1 . makeid order by count ( * ) desc limit 1
+select versions , count ( * ) from car_names group by versions
+select count ( * ) from cars_data where cylinders > 4
+select count ( * ) from cars_data where cylinders > 4
+select count ( * ) from cars_data where cylinders = 1980
+select distinct cylinders from cars_data where horsepower = ( select makeid from cars_data group by edispl order by count ( * ) desc limit 1980
+select sum ( t2 . accelerate ) from car_names as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t1 . maker = ' full motor '
+select count ( * ) from car_names as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t1 . maker = " car maker american motor "
+select id , mpg from cars_data group by cylinders having count ( * ) > 3
+select t2 . id , t2 . mpg from model_list as t1 join car_makers as t2 on t1 . modelid = t2 . modelid group by t1 . modelid having count ( * ) > 3
+select t1 . id from countries as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t2 . maker = ' general motors ' or t2 . weight > 3500
+select distinct edispl from cars_data where country = " car maker general motors motors " or edispl > " 3500 "
+select horsepower from cars_data where weight < ( select min ( weight ) from cars_data where cylinders < 4000 )
+select distinct horsepower from cars_data where weight < 4000 intersect select distinct distinct weight from cars_data where horsepower > 3000
+select horsepower from cars_data where fullname = ( select max ( weight ) from cars_data )
+select horsepower from cars_data group by maker order by sum ( weight ) desc limit 1
+select edispl from cars_data group by cylinders order by count ( * ) asc limit 1
+select edispl from cars_data group by cylinders order by count ( * ) asc limit 1
+select count ( * ) from cars_data where horsepower > ( select max ( weight ) from cars_data )
+select count ( * ) from car_makers where horsepower > ( select horsepower from cars_data where maker = ( select mpg from cars_data group by contid order by count ( * ) desc limit 1 )
+select count ( * ) from cars_data where cylinders > 2 and makers > 2
+select count ( * ) from car_names where fullname > 2 and weight > 2
+select count ( * ) from cars_data where mpg > 6
+select count ( * ) from cars_data where mpg > ' f '
+select makeid from cars_data where weight like " 4 % " order by fullname desc limit 1
+select maker from cars_data group by accelerate order by count ( * ) desc limit 3
+select country from car_makers where weight > ( select max ( weight ) from car_makers group by maker having count ( * ) > 3
+select distinct t1 . model , t1 . makeid from countries as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t2 . weight < 4
+select max ( 1980 ) from cars_data where edispl = " 8 " or year < 1980
+select max ( t2 . weight ) from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . id where t1 . 1980 = 8 or t2 . weight < 1980
+select id from car_makers where fullname < 3500 except select id from cars_data where countryname = ' ford '
+select distinct mpg from cars_data where horsepower < ' 3500 ' and year < not
+select distinct maker from cars_data except select t1 . id from cars_data as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t2 . maker = " car "
+select id from cars_data except select t1 . makeid from car_names as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t2 . maker = " car "
+select t1 . makeid , t1 . mpg from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . id having count ( * ) >= 2 intersect select t1 . id , t1 . makeid from cars_data as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . id having count ( * ) >= 2
+select t1 . makeid , t1 . id from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . id having count ( * ) >= 2 intersect select t1 . id , t1 . id from car_names as t1 join cars_data as t2 on t1 . makeid = t2 . makeid group by t1 . id having count ( * ) >= 2
+select t1 . makeid , t1 . id from cars_data as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t2 . weight > car or t2 . weight > car
+select t1 . makeid , t1 . model from car_names as t1 join car_makers as t2 on t1 . makeid = t2 . makeid where t2 . weight > car or t2 . accelerate > '
+select distinct from flights where country = " jetblue airways "
+select country from airports where country = " jetblue " and destairport = " airways "
+select abbreviation from flights where country = " jetblue airways "
+select abbreviation from flights where destairport = ( select sourceairport from flights where city = ' jetblue ' )
+select t2 . destairport , t1 . sourceairport from flights as t1 join airports as t2 on t1 . uid = t2 . uid where t1 . sourceairport = ' usa '
+select and t1 . abbreviations from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . sourceairport = ' usa '
+select city , city from airports where city = " anthony "
+select t1 . city , t1 . city from airports as t1 join airports as t2 on t1 . city = t2 . city where t2 . city = " anthony "
+select count ( * ) from airports
+select count ( * ) from airports
+select count ( * ) from airports
+select count ( * ) from airports
+select count ( * ) from airlines
+select count ( * ) from airlines
+select ual from airports where country = ' ual '
+select destairport from airports where country = ' ual '
+select count ( * ) from airports where destairport = ' usa '
+select count ( * ) from airports where destairport = ' usa '
+select city , country from airports where city = ' alton '
+select city , country from airports where city = ' alton '
+select city from airlines where country = ' ako '
+select city from airports where airportcode = ' ako '
+select city from airlines where city = ' aberdeen '
+select city from airlines where airportcode = " aberdeen "
+select count ( * ) from airlines where country = ' apg '
+select count ( * ) from airports where abbreviation = ' apg '
+select count ( * ) from airports where uid = ' destination '
+select count ( * ) from airports where abbreviation = ' ato '
+select count ( * ) from airports where city = ' aberdeen '
+select count ( * ) from airports where country = ' patent '
+select count ( * ) from airports where city = ' aberdeen '
+select count ( * ) from airports as t1 join airports as t2 on t1 . city = t2 . uid where t1 . flightno = ' aberdeen '
+select count ( * ) from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t1 . city = ' aberdeen ' intersect select t1 . city from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . city = ' ashley '
+select count ( * ) from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . city = " aberdeen to ashley "
+select count ( * ) from airports as t1 join flights as t2 on t1 . city = t2 . city where t2 . airportcode = ' jetblue airways '
+select count ( * ) from flights where country = " bangladesh "
+select count ( * ) from airports where country = ' united airlines ' or airportname = ' asy '
+select count ( * ) from flights as t1 join flights as t2 on t1 . city = t2 . city where t2 . country = " asy " and t1 . flightno = ' asy '
+select count ( * ) from airports where airportcode = ' united airlines ' or airportname = ' ahd '
+select count ( * ) from flights where flightno = " ahd " and sourceairport = " ahd "
+select count ( * ) from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . city = ' aberdeen '
+select count ( * ) from flights where country = " united states "
+select city from airports group by city order by count ( * ) desc limit 1
+select t1 . city from airports as t1 join airports as t2 on t1 . uid = t2 . city group by t2 . city order by count ( * ) desc limit 1
+select city from airports group by city order by count ( * ) desc limit 1
+select city from airports group by city order by count ( * ) desc limit 1
+select abbreviation from airlines group by abbreviation order by count ( * ) desc limit 1
+select country from airlines group by abbreviation order by count ( * ) desc limit 1
+select abbreviation from airports group by abbreviation order by count ( * ) asc limit 1
+select country from airports group by airportcode order by count ( * ) asc limit 1
+select country from airports group by airportname order by count ( * ) desc limit 1
+select abbreviation from airlines group by abbreviation order by count ( * ) desc limit 1
+select destairport , country from airports group by airportname order by count ( * ) limit 1
+select country , country from airports group by country order by count ( * ) asc limit 1
+select destairport from airports where destairport = ' ahd '
+select t2 . destairport from flights as t1 join airlines as t2 on t1 . uid = t2 . uid where t1 . sourceairport = ' ahd '
+select city from airports where country = ' ahd '
+select t1 . destairport from flights as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . destairport = ' ahd '
+select distinct t1 . country from airports as t1 join flights as t2 on t1 . uid = t2 . city where t2 . flightno = ' apg ' intersect select t1 . airportcode from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . airportcode = ' cvo '
+select destairport from flights where destairport = ' apg ' intersect select destairport from flights where destairport = " cvo "
+select city from airports where country = ' cvo ' except select destairport from airports where country = ' apg '
+select t1 . airports from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . destairport = ' cvo ' except select t1 . destairport from flights as t1 join apg as t2 on t1 . uid = t2 . uid where t2 . airports = " apg "
+select country from airports group by country having count ( * ) >= 10
+select country from airports group by country having count ( * ) >= 10
+select destairport from airports group by destairport having count ( * ) < 200
+select destairport from airlines group by destairport having count ( * ) < 200
+select numbers from airports where country = " united airlines "
+select flight from airports where country = " united airlines "
+select country from airlines where country = " apg "
+select distinct t1 . abbreviation from flights as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . city = " apg "
+select country from airlines where country = " apg "
+select distinct t1 . country from airlines as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . flightno = " landing "
+select country from airlines where city = " aberdeen "
+select distinct t1 . abbreviation from flights as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . city = " aberdeen "
+select country from airlines where city = " aberdeen "
+select distinct t1 . country from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . flightno = " aberdeen "
+select count ( * ) from airports as t1 join airports as t2 on t1 . uid = t2 . uid where t2 . city = ' aberdeen ' or t2 . city = " abilene "
+select count ( * ) from airports as t1 join airports as t2 on t1 . city = t2 . uid where t2 . country = ' aberdeen ' or t2 . sourceairport = ' abilene '
+select name , country from airlines where uid not in ( select uid from flights )
+select city from airports except select city from airports where country = ' departing ' or country = " arriving "
+select count ( * ) from hiring
+select count ( * ) from hiring
+select name from shop order by age asc
+select name from shop order by age asc
+select city , count ( * ) from shop group by city
+select count ( * ) , city from shop group by city
+select t1 . name from employee as t1 join evaluation as t2 on t1 . employee_id = t2 . employee_id group by t2 . employee_id having count ( * ) > 1
+select district from employee group by district having count ( * ) > 1
+select count ( * ) , location from employee group by location
+select t2 . bonus , count ( * ) from evaluation as t1 join evaluation as t2 on t1 . shop_id = t2 . shop_id group by t1 . employee_id
+select t2 . name , t2 . employee_id from evaluation as t1 join evaluation as t2 on t1 . shop_id = t2 . shop_id group by t1 . shop_id order by count ( * ) desc limit 1
+select t2 . name , t2 . year_awarded from evaluation as t1 join hiring as t2 on t1 . shop_id = t2 . shop_id group by t1 . shop_id order by count ( * ) desc limit 1
+select min ( is_full_time ) , max ( is_full_time ) from hiring
+select min ( is_full_time ) , max ( is_full_time ) from hiring
+select name , location , district from shop order by of desc
+select employee_id , location , district from employee order by employee_id desc
+select t1 . name from shop as t1 join evaluation as t2 on t1 . shop_id = t2 . shop_id where age > ( select avg ( age ) from shop )
+select employee_id from shop where age > ( select avg ( age ) from shop )
+select t2 . name from evaluation as t1 join hiring as t2 on t1 . shop_id = t2 . shop_id group by t1 . shop_id order by count ( * ) desc limit 1
+select employee_id from hiring where start_from like " % mar % " group by employee_id order by count ( * ) desc limit 1
+select t2 . name from evaluation as t1 join hiring as t2 on t1 . shop_id = t2 . shop_id group by t1 . shop_id order by count ( * ) desc limit 1
+select t1 . employee_id from hiring as t1 join evaluation as t2 on t1 . shop_id = t2 . shop_id group by t2 . employee_id order by count ( * ) desc limit 1
+select name from shop where shop_id not in ( select shop_id from evaluation )
+select employee_id from shop where shop_id not in ( select employee_id from evaluation )
+select t2 . name from evaluation as t1 join shop as t2 on t1 . shop_id = t2 . shop_id group by t1 . shop_id order by count ( * ) desc limit 1
+select employee_id from hiring group by employee_id order by count ( * ) desc limit 1
+select name from shop where shop_id not in ( select shop_id from evaluation )
+select employee_id from shop except select t1 . name from employee as t1 join evaluation as t2 on t1 . shop_id = t2 . shop_id
+select count ( * ) , t3 . employee_id from evaluation as t1 join hiring as t2 on t1 . shop_id = t2 . shop_id group by t2 . employee_id
+select employee_id , count ( * ) from hiring group by employee_id
+select sum ( number_products ) from hiring
+select sum ( is_full_time ) from hiring where start_from = " evaluations "
+select * from hiring
+select * from hiring
+select shop_id from hiring where age < 3000 intersect select district from hiring where number_products > 10000
+select start_from from hiring where is_full_time < ( select min ( is_full_time ) from hiring where number_products > 10000
+select count ( distinct manager_name ) from hiring
+select count ( distinct employee_id ) from hiring
+select count ( * ) from paragraphs
+select count ( * ) from paragraphs
+select template_type_code , template_type_description , date_effective_from from ref_template_types
+select template_id , template_id , date_effective_from from templates
+select t2 . document_name , t1 . template_id from templates as t1 join documents as t2 on t1 . template_type_code = t2 . template_id where t1 . document_id like ' % w % '
+select document_name , template_id from documents where template_id in ( select template_id from templates where document_name like ' % their % ' )
+select document_id , template_id , other_details from documents where document_name = " robbin cv "
+select template_id , template_type_code , date_effective_to from templates where document_name = " robbin cv "
+select count ( distinct document_id ) from templates
+select count ( distinct different ) from paragraphs
+select count ( * ) from documents where template_id = ' ppt '
+select count ( * ) from documents where template_id = ' ppt ' and template_id = ' template '
+select template , count ( * ) from paragraphs group by document_id
+select paragraph_id , count ( * ) from paragraphs group by document_id
+select document_id , date_effective_to from templates group by template_type_code order by count ( * ) desc limit 1
+select version_number , date_effective_from from templates group by template_type_code order by count ( * ) desc limit 1
+select template_id from paragraphs group by template_id having count ( * ) > 1
+select paragraph_id from paragraphs group by paragraph_id having count ( * ) > 1
+select template_id from templates except select template_id from templates
+select paragraph_id from paragraphs except select paragraph_id from paragraphs
+select count ( * ) from paragraphs
+select count ( * ) from paragraphs
+select paragraph_id , paragraph_text , template from paragraphs
+select template , date_effective_from , date_effective_to from templates group by template
+select distinct document_id from documents where document_id = " null "
+select distinct document_id from paragraphs
+select paragraph_id from paragraphs where paragraph_text = ' pp ' or document_id = ' ppt '
+select paragraph_id from paragraphs where paragraph_text = ' pp ' or template_id = ' ppt '
+select count ( * ) from paragraphs where document_id in ( select paragraph_id from paragraphs where template_id = " cv " )
+select count ( * ) from documents where template_id = " cv "
+select date_effective_to , template_details from templates where document_description > 5
+select date_effective_to , date_effective_to from templates where document_description > 5
+select document_id , count ( * ) from paragraphs group by document_id
+select different , count ( * ) from paragraphs group by document_id
+select document_id from paragraphs group by document_id order by count ( * ) desc limit 1
+select template_type_code from templates group by template_type_code order by count ( * ) desc limit 1
+select three from paragraphs group by document_id having count ( * ) < 3
+select date_effective_from from templates group by template_type_code having count ( * ) < 3
+select t2 . template_id , t2 . template_type_description from paragraphs as t1 join ref_template_types as t2 on t1 . template_id = t2 . paragraph_id group by t2 . template_type_code
+select min ( template_details ) , document_id from documents group by document_id
+select template_type_code from templates where document_name = " data base "
+select template_type_code from templates where document_name = " data "
+select document_name from documents where template_id = " template "
+select document_name from documents where template_id < ( select template_id from templates where document_id = " templates " )
+select type , count ( * ) from paragraphs group by document_id
+select different , count ( * ) from paragraphs group by document_id
+select template_type_code from documents group by template_type_code order by count ( * ) desc limit 1
+select document_id from documents group by template_type_code order by count ( * ) desc limit 1
+select template_id from paragraphs except select paragraph_id from templates
+select document_id from documents except select document_id from templates
+select template_id , template_type_code from templates
+select template_id , paragraph_text from templates
+select t1 . paragraph_text from paragraphs as t1 join documents as t2 on t1 . paragraph_id = t2 . paragraph_id where t2 . document_name = " ad "
+select t2 . paragraph_text from paragraphs as t1 join templates as t2 on t1 . template_id = t2 . template_id where t1 . paragraph_text = ' ad '
+select document_id from documents where document_name = " book "
+select template_id from documents where document_name = " book "
+select distinct t1 . version_number from paragraphs as t1 join documents as t2 on t1 . paragraph_id = t2 . paragraph_id where t2 . document_id < 0
+select distinct template_id from paragraphs
+select paragraph_id from paragraphs where template_id = " presentation "
+select paragraph_id from templates where document_name like ' % presentation % '
+select count ( * ) from paragraphs
+select count ( * ) from paragraphs
+select count ( * ) from paragraphs as t1 join templates as t2 on t1 . document_id = t2 . document_id where t1 . document_name = ' summer show '
+select count ( * ) from paragraphs as t1 join templates as t2 on t1 . template_type_code = t2 . template_id where t1 . document_id = ' summer show '
+select t1 . paragraph_text from paragraphs as t1 join ref_template_types as t2 on t1 . template_type_code = t2 . template_type_code where t2 . text = korea
+select t1 . template_type_description from ref_template_types as t1 join documents as t2 on t1 . template_type_code = t2 . template_type_code where t2 . template_id = ' korea '
+select document_id , template_id from documents where document_name = " welcome to ny "
+select document_id , template_id from documents where document_name = " welcome to ny "
+select t2 . template_type_description from documents as t1 join templates as t2 on t1 . template_type_code = t2 . template_type_code where t1 . template_type_description = " customer "
+select t2 . paragraph_text from documents as t1 join templates as t2 on t1 . document_id = t2 . document_id where t1 . template_id = ' reviews '
+select template_type_description , count ( * ) from paragraphs group by template_type_description
+select paragraph_id , count ( * ) from paragraphs group by document_id order by count ( * ) asc
+select t2 . template_type_code , count ( * ) from ref_template_types as t1 join templates as t2 on t1 . template_type_code = t2 . template_type_code group by t1 . template_type_description
+select t1 . document , t2 . template_id , count ( * ) from documents as t1 join templates as t2 on t1 . document_id = t2 . document_id group by t1 . template_id
+select template_id from documents group by document_id having count ( * ) >= 2
+select document_id from documents group by template_id having count ( * ) >= 2
+select t1 . template_id , t1 . document_name from documents as t1 join templates as t2 on t1 . template_type_code = t2 . template_id group by t1 . template_id order by count ( * ) desc limit 1
+select t1 . template_type_code , t1 . document_name from documents as t1 join templates as t2 on t1 . template_type_code = t2 . template_type_code group by t1 . template_type_code order by count ( * ) desc limit 1
+select template_id from templates group by document_id order by count ( * ) asc limit 1
+select template_type_code from templates group by document_id order by count ( * ) asc limit 1
+select document_id from documents where template_type_code = 1 and 2
+select document_id from documents group by template_id having count ( * ) >= 2
+select document_id from documents where template_id = brazil and template_id = ' ireland '
+select document_id from templates where document_description = ' paragraph ' intersect select template_id from documents where document_name = ' ireland '
+select count ( * ) from course_arrange
+select count ( * ) from course_arrange
+select name from teacher order by age asc
+select name from teacher order by age asc
+select age , hometown from teacher
+select age , hometown from teacher
+select name from teacher where hometown != ' ` ` ` ` ` lever lever '
+select name from teacher where hometown != " ` ` ` ` lever '
+select distinct t1 . name from course as t1 join course_arrange as t2 on t1 . course_id = t2 . course_id where t2 . course_id >= 32 or t2 . course_id = 32 or t2 . staring_date = ' 33 '
+select t3 . name from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id where t1 . age = 32 or t2 . teacher_id = ' 33 '
+select hometown from teacher order by age asc limit 1
+select name from teacher order by age asc limit 1
+select hometown , count ( * ) from course_arrange group by hometown
+select avg ( there ) , hometown from course_arrange group by hometown
+select hometown from teacher group by hometown order by count ( * ) desc limit 1
+select t2 . teacher_id group by t2 . teacher_id group by t2 . teacher_id order by count ( * ) desc limit 1
+select course from course group by course having count ( * ) >= 2
+select towns from course_arrange group by towns having count ( * ) >= 2
+select t2 . name , t1 . teacher_id from course_arrange as t1 join teacher as t2 on t1 . course_id = t2 . course_id join teacher as t3 on t1 . teacher_id = t3 . teacher_id
+select t1 . name , t2 . teacher_id from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id
+select t1 . name , t1 . teacher_id from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id order by t1 . name asc
+select t1 . name , t2 . hometown from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id order by t2 . name asc
+select t2 . name from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id group by t1 . teacher_id order by count ( * ) desc limit 1
+select t2 . name from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id group by t1 . teacher_id having count ( * ) = math
+select t2 . teacher_id , count ( * ) from course_arrange as t1 join course_arrange as t2 on t1 . course_id = t2 . course_id group by t1 . teacher_id
+select t2 . teacher_id , count ( * ) from course_arrange as t1 join course_arrange as t2 on t1 . course_id = t2 . course_id group by t1 . teacher_id
+select t1 . name from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id group by t1 . teacher_id having count ( * ) >= 2
+select t1 . name from teacher as t1 join course_arrange as t2 on t1 . teacher_id = t2 . teacher_id group by t1 . teacher_id having count ( * ) >= 2
+select name from teacher where teacher_id not in ( select course_id from course_arrange )
+select name from teacher where teacher_id not in ( select course_id from course_arrange )
+select count ( * ) from visit where age < 30
+select name from museum where age > 4 order by open_year
+select avg ( age ) from museum where age > 4
+select t1 . name , t1 . level from visitor as t1 join museum as t2 on t1 . museum_id = t2 . museum_id where t2 . open_year > 4 order by t1 . name
+select t1 . id , t1 . name from visitor as t1 join visit as t2 on t1 . museum_id = t2 . museum_id group by t1 . museum_id order by count ( * ) desc limit 1
+select avg ( num_of_staff ) from visit where age < 2009
+select t1 . year , t1 . year from visit as t1 join visitor as t2 on t1 . museum_id = t2 . museum_id where t2 . name = ' plaza '
+select t1 . name from visitor as t1 join visit as t2 on t1 . museum_id = t2 . museum_id where t2 . age < 2010 intersect select t2 . name from visit as t1 join museum as t2 on t1 . museum_id = t2 . museum_id where t2 . open_year > 2010 )
+select t1 . id , t1 . name , t1 . total_spent from visitor as t1 join visit as t2 on t1 . museum_id = t2 . museum_id group by t1 . id having count ( * ) > 1
+select t1 . id , t1 . name , t1 . level from visit as t1 join visit as t2 on t1 . museum_id = t2 . museum_id where t2 . total_spent = ' tickets ' group by t1 . id order by sum ( t1 . amount ) desc limit 1
+select t1 . id , t1 . name from visit as t1 join visit as t2 on t1 . museum_id = t2 . museum_id group by t1 . id order by count ( * ) desc limit 1
+select name from visitor where id not in ( select id from visit )
+select t1 . name , t1 . age from visitor as t1 join visit as t2 on t1 . museum_id = t2 . museum_id group by t1 . museum_id order by count ( * ) desc limit 1
+select avg ( age ) , max ( age ) from visitor group by visits
+select sum ( age ) from visitor where level = 1
+select name from visitor where age < 2009 intersect select id from visit where total_spent > 2011
+select count ( * ) from visitor where visitors not in ( select museum_id from visit where total_spent > 2010 )
+select count ( * ) from visitor where open_year > 2013 or age < 2008
+select count ( * ) from matches
+select count ( * ) from matches
+select count ( * ) from matches
+select count ( * ) from matches
+select first_name , score from matches where country = ' usa '
+select first_name , last_name from matches where first_name = ' usa '
+select avg ( age ) , t3 . player_id from matches group by tours
+select avg ( score ) , winners from matches group by winners
+select avg ( rank ) from matches
+select avg ( rank ) from matches
+select rank from matches group by rank order by count ( * ) desc limit 1
+select rank from matches where rank = ' losers '
+select count ( distinct country ) from matches
+select count ( distinct last_name ) from matches
+select count ( distinct name ) from matches
+select count ( distinct ranking_date ) from rankings
+select birth_date from matches where year > 10
+select birth_date from players where country_code > 10
+select t2 . first_name from rankings as t1 join matches as t2 on t1 . ranking_date = t2 . ranking_date where t1 . ranking_points = t2 . best_of where t1 . ranking_points = t2 . best_of where t1 . ranking_points = t2 . best_of where t1 . ranking_points = t2 . loser_name where t1 . loser_entry = t2 . loser_name where t1 . loser_entry = t2 . loser_name where t1 . loser_entry = t2 . loser_name where t1 . loser_entry = t2 . loser_name where t1 . loser_entry = t2 . loser_ioc where t1 . loser_entry = t2 . loser_ioc
+select t2 . first_name from rankings as t1 join matches as t2 on t1 . ranking_date = t2 . ranking_date where t1 . ranking_points = t2 . best_of where t1 . loser_entry = t2 . best_of where t1 . loser_entry = t2 . draw_size where t1 . loser_entry = t2 . best_of where t2 . minutes = ' 2013 ' intersect select t1 . last_name from players as t1 join rankings as t2 on t1 . ranking_date = t2 . ranking_date where t2 . minutes = 2016
+select count ( * ) from rankings where year = t1 . winner_seed where t2 . year = 2016 or year = 2016
+select count ( * ) from rankings as t1 join matches as t2 on t1 . ranking_date = t2 . ranking_date where t2 . year = 2016 or t2 . year = 2016
+select t1 . best_of , t3 . ranking_points from players as t1 join matches as t2 on t1 . best_of = t2 . ranking_date where t2 . minutes = ' tourney ' intersect select t1 . draw_size from players as t1 join matches as t2 on t1 . best_of = t2 . ranking_date where t2 . minutes = ' australian '
+select t1 . first_name , t1 . hand from players as t1 join rankings as t2 on t1 . player_id = t2 . player_id where t2 . minutes = ' wta ' intersect select t1 . draw_size from players as t1 join matches as t2 on t1 . best_of = t2 . ranking_date where t2 . minutes = ' australian '
+select first_name , country from matches order by score limit 1
+select first_name , country from matches order by score limit 1
+select first , last_name from matches order by birth_date desc
+select first_name , last_name from matches order by birth_date desc
+select first , last_name from matches order by score desc limit 1
+select t2 . first_name , t2 . last_name from rankings as t1 join matches as t2 on t1 . ranking_date = t2 . ranking_date join matches as t3 on t1 . best_of = t3 . best_of order by t3 . surface desc limit 1
+select t1 . first_name , t1 . tours from players as t1 join matches as t2 on t1 . best_of = t2 . best_of group by t1 . best_of order by count ( * ) desc limit 1
+select t1 . first_name , t1 . tours from players as t1 join matches as t2 on t1 . best_of = t2 . best_of group by t1 . best_of order by count ( * ) desc limit 1
+select year from matches group by year order by count ( * ) desc limit 1
+select year from matches group by year order by count ( * ) desc limit 1
+select t2 . first_name , t2 . player_id from rankings as t1 join matches as t2 on t1 . best_of = t2 . best_of group by t1 . best_of order by count ( * ) desc limit 1
+select t2 . first_name , t2 . player_id from rankings as t1 join matches as t2 on t1 . best_of = t2 . best_of group by t1 . best_of order by count ( * ) desc limit 1
+select t1 . first_name , t1 . rank from rankings as t1 join matches as t2 on t1 . best_of = t2 . ranking_date join matches as t3 on t2 . best_of = t3 . best_of where t3 . draw_size = ' australian ' and t2 . rank = ( select best_of from rankings group by best_of order by count ( * ) limit 1
+select t2 . first_name from rankings as t1 join matches as t2 on t1 . best_of = t2 . best_of where t1 . rank = ' australian australian rank open ' group by t1 . rank order by count ( * ) desc limit 1
+select t2 . first_name , t2 . player_id from rankings as t1 join matches as t2 on t1 . best_of = t2 . best_of group by t1 . best_of order by count ( * ) desc limit 1
+select t1 . first_name , t1 . ranking_points from rankings as t1 join matches as t2 on t1 . best_of = t2 . ranking_date order by t2 . score limit 1
+select avg ( round ) , t1 . first_name , t1 . first_name , avg ( t2 . player_id ) from players as t1 join matches as t2 on t1 . ranking_date = t2 . ranking_date group by t1 . player_id
+select t1 . first_name , t1 . tours , avg ( t2 . score ) from players as t1 join matches as t2 on t1 . player_id = t2 . player_id group by t1 . player_id
+select sum ( points ) , t3 . ranking_points from players as t1 join players as t2 on t1 . ranking_date = t2 . ranking_date join matches as t3 on t2 . best_of = t3 . best_of group by t3 . player_id
+select t2 . first_name , t1 . hand , sum ( t2 . score ) from rankings as t1 join matches as t2 on t1 . best_of = t2 . best_of group by t1 . draw_size
+select count ( * ) , country from players group by country
+select t2 . draw_size , count ( * ) from players as t1 join matches as t2 on t1 . player_id = t2 . player_id group by t1 . player_id
+select country from players group by country order by count ( * ) desc limit 1
+select country from players group by country order by count ( * ) desc limit 1
+select 50 from players group by hand having count ( * ) > 50
+select 50 from players where country_code > 50
+select count ( * ) , draw_size from rankings group by draw_size
+select sum ( surface ) , loser_age from matches group by draw_size
+select count ( * ) , year from matches group by year
+select count ( * ) , year from rankings group by year
+select first_name , rank from matches order by score limit 3
+select first_name , last_name from matches order by score limit 3
+select count ( distinct winner_rank_points ) from rankings where year = championships and year = handed
+select count ( * ) from matches as t1 join matches as t2 on t1 . best_of = t2 . ranking_date where t2 . draw_size = ' left ' and t1 . year = championships
+select t1 . first_name , t1 . loser_age from rankings as t1 join matches as t2 on t1 . best_of = t2 . ranking_date order by t2 . player_id desc limit 1
+select t1 . first_name , t1 . tours from rankings as t1 join matches as t2 on t1 . best_of = t2 . ranking_date group by t1 . ranking_date order by count ( * ) desc limit 1
+select count ( * ) , draw_size from matches group by draw_size
+select draw_size , count ( * ) from matches group by loser_entry
+select count ( * ) from ship where note like ' % captured % '
+select name , date from battle order by killed desc
+select lost_in_battle , note , result from ship
+select maximum , killed , max ( killed ) , sum ( injured ) from ship group by disposition_of_ship
+select avg ( injured ) , disposition_of_ship from ship group by disposition_of_ship
+select caused_by_ship_id , note from death where ship_type = ' t '
+select name , ship_type from ship where note != ' boril commander '
+select distinct t1 . lost_in_battle , t1 . name from ship as t1 join battle as t2 on t1 . lost_in_battle = t2 . lost_in_battle where t2 . id = ' brig '
+select caused_by_ship_id , name from death where killed > 10
+select lost_in_battle from ship group by injuries order by count ( * ) desc limit 1
+select distinct t1 . name from ship as t1 join battle as t2 on t1 . lost_in_battle = t2 . caused_by_ship_id where t2 . note = ' and killed between select distinct name from ship where distinct t3 . name from ship as t1 join death as t2 on t1 . lost_in_battle = t2 . caused_by_ship_id where t1 . note = " kaloyan ' and t2 . killed > " i i "
+select count ( distinct location ) from ship
+select count ( * ) from battle where caused_by_ship_id not in ( select caused_by_ship_id from battle where id = ' 225 ' )
+select name , note from ship where location = " lettice " intersect select name from ship where note = " hms atalanta "
+select id , note , injured from death where location != ' english '
+select date from battle where location like " % east % "
+select course_id from departments where date_first_registered between 1 and 2
+select t2 . first_name , t1 . state_province_county from addresses as t1 join courses as t2 on t1 . address_id = t2 . address_id
+select count ( * ) from courses
+select count ( * ) from courses
+select count ( * ) from courses as t1 join sections as t2 on t1 . department_id = t2 . course_id group by t1 . department_name
+select department_description from sections where ssn = math
+select t1 . line_3 from addresses as t1 join courses as t2 on t1 . address_id = t2 . address_id where t2 . course_name = " port "
+select distinct t1 . zip_postcode from sections as t1 join courses as t2 on t1 . course_id = t2 . course_id where t2 . department_name = " port "
+select t2 . course_name , t1 . department_id from sections as t1 join courses as t2 on t1 . course_id = t2 . course_id group by t1 . department_name order by sum ( t1 . department_description ) desc limit 1
+select t2 . course_name , t1 . department_id from sections as t1 join courses as t2 on t1 . course_id = t2 . course_id group by t1 . department_name order by sum ( t1 . degrees ) desc limit 1
+select count ( distinct city ) from courses where course_id in ( select course_id from sections )
+select departments , count ( distinct course_id ) from sections
+select count ( distinct department_name ) from courses
+select count ( distinct course_id ) from sections
+select sum ( department_description ) from sections where department_name = ' engineering '
+select sum ( section_description ) from sections
+select department_name , state_province_county from addresses
+select department_name , state_province_county from addresses
+select t2 . course_name , t1 . department_id from sections as t1 join courses as t2 on t1 . course_id = t2 . course_id group by t2 . course_id having count ( * ) <= 2
+select t1 . department_name , t2 . course_id from addresses as t1 join courses as t2 on t1 . address_id = t2 . address_id group by t2 . address_id having count ( * ) < 2
+select email_address from students order by last_name
+select city from addresses where state_province_county like ' % reverse % ' order by department_name
+select t1 . degree_program_id , t1 . degree_program_id from departments as t1 join sections as t2 on t1 . department_id = t2 . student_id group by t1 . department_name order by count ( * ) desc limit 1
+select t2 . department_name , t1 . department_id from departments as t1 join sections as t2 on t1 . degree_program_id = t2 . degree_program_id group by t1 . student_id order by count ( * ) desc limit 1
+select t2 . transcript_id from addresses as t1 join courses as t2 on t1 . course_id = t2 . course_id where t1 . department_name = " computer "
+select department_description from addresses where course_name like " % computer % "
+select t1 . first_name , t1 . last_name , t1 . department_id from addresses as t1 join sections as t2 on t1 . department_id = t2 . course_id where t2 . section_description = 2
+select t2 . first_name , t2 . last_name , t1 . student_id from student_enrolment as t1 join students as t2 on t1 . student_id = t2 . student_id where t1 . section_description = 2
+select t1 . first_name , t1 . last_name from addresses as t1 join sections as t2 on t1 . department_id = t2 . department_id join courses as t3 on t2 . section_id = t3 . section_id
+select t1 . first_name , t1 . last_name from departments as t1 join sections as t2 on t1 . department_id = t2 . department_id where t2 . section_name = ' bachelors '
+select t1 . department_name from courses as t1 join sections as t2 on t1 . department_id = t2 . course_id group by t1 . department_name order by count ( * ) desc limit 1
+select t3 . course_name from degree_programs as t1 join transcript_contents as t2 on t1 . department_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t1 . department_name , t2 . student_id from departments as t1 join courses as t2 on t1 . degree_program_id = t2 . section_id group by t1 . department_name order by count ( * ) desc limit 1
+select t1 . degree_program_id , t1 . permanent_address_id from departments as t1 join sections as t2 on t1 . department_id = t2 . student_id group by t1 . department_name order by count ( * ) desc limit 1
+select t1 . student_id , t1 . last_name , t1 . student_id from departments as t1 join sections as t2 on t1 . department_id = t2 . student_id group by t1 . degree_program_id order by count ( * ) desc limit 1
+select t2 . first_name , t1 . last_name , t1 . student_id from departments as t1 join students as t2 on t1 . degree_program_id = t2 . degree_program_id group by t1 . degree_program_id order by count ( * ) desc limit 1
+select first_name from students except select t1 . first_name from students as t1 join transcript_contents as t2 on t1 . department_id = t2 . student_id
+select first_name from courses except select t2 . first_name from departments as t1 join sections as t2 on t1 . course_id = t2 . course_id
+select t2 . department_name from sections as t1 join courses as t2 on t1 . course_id = t2 . course_id
+select distinct t2 . first_name from departments as t1 join courses as t2 on t1 . course_id = t2 . course_id
+select t2 . course_name from addresses as t1 join sections as t2 on t1 . department_id = t2 . course_id group by t1 . department_name order by count ( * ) desc limit 1
+select t2 . course_name from student_enrolment as t1 join courses as t2 on t1 . course_id = t2 . course_id group by t1 . department_name order by count ( * ) desc limit 1
+select t3 . last_name from sections as t1 join departments as t2 on t1 . department_id = t2 . department_id join semesters as t3 on t1 . course_id = t3 . course_id where t3 . course_name = " north carolina " except select t1 . transcript_date from sections as t1 join departments as t2 on t1 . department_id = t2 . course_id join courses as t3 on t2 . section_id = t3 . semester_id where t3 . course_name = " north carolina " and t3 . section_name = " male "
+select t2 . last_name from sections as t1 join students as t2 on t1 . course_id = t2 . course_id where t1 . department_id = north carolina except select t1 . first_name from departments as t1 join sections as t2 on t1 . student_course_id = t2 . degree_program_id where t2 . transcript_id = " north carolina " and t2 . degree_summary_description > "
+select t1 . course_id , t1 . department_id from sections as t1 join courses as t2 on t1 . department_id = t2 . course_id group by t2 . course_id having count ( * ) >= 2
+select t1 . course_id , t1 . department_id from sections as t1 join courses as t2 on t1 . department_id = t2 . course_id group by t2 . course_id having count ( * ) >= 2
+select t1 . other_student_details from sections as t1 join students as t2 on t1 . degree_program_id = t2 . student_course_id where t2 . first_name = " timmothy " and t2 . last_name = " timmothy "
+select cell_mobile_number from students where last_name = " timmothy "
+select first_name , last_name from students order by last_name
+select t2 . first_name , t2 . last_name , t1 . other_details from departments as t1 join courses as t2 on t1 . course_id = t2 . course_id
+select first_name , middle_name from students order by last_name asc
+select first_name , middle_name , last_name from students order by last_name
+select t2 . course_name from addresses as t1 join courses as t2 on t1 . address_id = t2 . address_id group by t2 . department_name
+select t2 . first_name , t2 . last_name from student_enrolment as t1 join students as t2 on t1 . student_course_id = t2 . student_course_id group by t2 . student_id
+select t1 . address , t1 . department_description from sections as t1 join sections as t2 on t1 . department_id = t2 . course_id group by t1 . department_name order by count ( * ) desc limit 1
+select t1 . degree_program_id , t1 . current_address_id , t1 . section_description from sections as t1 join sections as t2 on t1 . department_id = t2 . student_id group by t1 . department_id order by count ( * ) desc limit 1
+select avg ( other_student_details ) from degree_programs where ssn in ( select student_id from sections group by student_id
+select avg ( date ) from students
+select t1 . degree_program_id , t1 . department_description from sections as t1 join students as t2 on t1 . degree_program_id = t2 . degree_program_id where t2 . transcript_id = ' transcript '
+select cell_mobile_number , email_address from students where email_address = ' transcript '
+select count ( * ) from degree_programs
+select count ( * ) from students
+select department_description from addresses where state_province_county = ' transcript '
+select cell_mobile_number , email_address from students
+select count ( * ) , section_description from sections group by department_id
+select count ( * ) , department_name from sections group by department_id
+select t1 . student_id , t1 . student_id from transcripts as t1 join students as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) asc limit 1
+select t2 . transcript_id , t1 . degree_program_id from student_enrolment as t1 join students as t2 on t1 . degree_program_id = t2 . degree_program_id group by t2 . student_id order by count ( * ) asc limit 1
+select degree_summary_description , other_student_details from degree_programs where date_first_registered in ( select student_id from sections group by degree_summary_name
+select course_id from sections intersect select course_id from departments where section_description = ' bachelors ' intersect select course_id from departments where section_name = ' bachelors '
+select count ( distinct student_id ) from sections
+select distinct t1 . department_name from courses as t1 join sections as t2 on t1 . department_id = t2 . department_id join degree_programs as t3 on t2 . section_id = t3 . degree_program_id
+select cell_mobile_number from students order by last_name
+select cell_mobile_number from students where date_first_registered <= ' order by first_name
+select distinct section_description from sections
+select t2 . section_name from sections as t1 join courses as t2 on t1 . course_id = t2 . course_id
+select distinct t1 . first_name from students as t1 join departments as t2 on t1 . department_id = t2 . department_id join semesters as t3 on t2 . course_id = t3 . course_id where t3 . country = " haiti " or t3 . student_enrolment_id = ' 09700166582 '
+select distinct t1 . first_name from students as t1 join departments as t2 on t1 . department_id = t2 . department_id join courses as t3 on t2 . course_id = t3 . course_id where t3 . course_name = " haiti " or t3 . course_name = " 09700166582 "
+select title from tv_series order by title
+select title from tv_series order by title
+select content from cartoon where title = " ben jones "
+select t1 . content from tv_series as t1 join tv_channel as t2 on t1 . id = t2 . id where t2 . country = " ben "
+select count ( * ) from tv_series as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t1 . title = " joseph kuhr "
+select count ( * ) from cartoon where channel = ' joseph '
+select id , channel from tv_series order by 18_49_rating_share
+select id , channel from cartoon order by 18_49_rating_share % t1 . share
+select t1 . title from cartoon as t1 join tv_channel as t2 on t1 . id = t2 . id join tv_channel as t3 on t2 . id = t3 . id where t3 . title = " ben jones " or t3 . channel = " brandon "
+select content from tv_channel where country = " ben " or series_name = " vietti "
+select t1 . country , t1 . country from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id group by t1 . id order by count ( * ) desc limit 1
+select country , count ( * ) from cartoon group by country order by count ( * ) desc limit 1 group by country order by count ( * ) desc limit 1
+select count ( distinct title ) from cartoon where id not in ( select t1 . id limit episode ) from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t3 . id = t2 . id join tv_channel as t3 on t1 . id = t3 . id where t3 . channel = ' tv '
+select count ( distinct episode ) from tv_series where id not in ( select id from cartoon )
+select id from tv_series where title = " sky radio "
+select id from tv_series where episode = ( select min ( 18_49_rating_share ) from tv_series )
+select viewers_m from cartoon where title = ' sky radio '
+select t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t1 . id = t3 . id where t3 . rating = ' sky '
+select count ( * ) from cartoon where channel = ' english '
+select count ( * ) from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id where t1 . title = ' english '
+select t1 . id , t1 . id from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id group by t1 . id order by count ( * ) asc limit 1
+select languages from cartoon group by languages order by count ( * ) asc limit 1
+select t1 . title , count ( * ) from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id group by t1 . id
+select count ( * ) , t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id group by t1 . id having t1 . id limit 1
+select t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . channel = ' tv rise ' and t2 . air_date = ' tv rise '
+select t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . channel = ' cartoon ' and t3 . package_option = ' cartoon '
+select t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join tv_channel as t3 on t2 . id = t3 . id where t3 . channel = " sky radio "
+select t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join tv_channel as t3 on t2 . id = t3 . id where t3 . channel = " sky radio "
+select episode from tv_series order by share desc
+select episode from tv_series order by ratings asc
+select tv , directed_by from cartoon order by share desc limit 3
+select t1 . id , weekly_rank from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id group by t1 . id order by count ( * ) desc limit 3
+select t1 . episode , max ( t2 . share ) from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id where t2 . share = ' tv series '
+select max ( share ) , min ( share ) from cartoon where 18_49_rating_share = ' yes '
+select t1 . air_date from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . title = " a love of lifetime "
+select air_date from tv_series where title = " a love " . air_date = " a love "
+select t1 . id from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id where t2 . air_date = " a love of lifetime "
+select t1 . rank from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id where t2 . title = " a love of a lifetime "
+select t1 . id from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . title = ' a love of ' and t2 . title = ' tv love '
+select t1 . title from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id where t2 . title = " a love of lifetime "
+select t1 . 18_49_rating_share from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id where t2 . title = ' sky radio '
+select t1 . air_date from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . channel = " sky radio " order by t3 . 18_49_rating_share limit 1
+select count ( * ) , t1 . id from tv_series as t1 join tv_series as t2 on t1 . id = t2 . id group by t1 . id
+select count ( * ) , director from tv_series where director = ' create ' group by director
+select episode , episode from tv_series order by share desc limit 1
+select viewers_m , episode from tv_series order by share desc limit 1
+select t1 . title , t2 . air_date from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id where t2 . 18_49_rating_share != ' tv ' and t2 . weekly_rank != ' tv '
+select t1 . title , t2 . weekly_rank from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id join tv_channel as t3 on t1 . id = t3 . id where t3 . 18_49_rating_share = ' tv ' and t2 . weekly_rank != t3 . weekly_rank
+select t1 . id from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . air_date = ' todd ' and t3 . rating = ' casey '
+select t1 . id from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join tv_channel as t3 on t2 . id = t3 . id where t3 . episode = ' todd ' and t3 . package_option = '
+select id from tv_series except select id from cartoon where by = " todd "
+select id from tv_channel except select id from tv_series where country = " todd "
+select t1 . title , t1 . 18_49_rating_share , t1 . country from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id where t2 . air_date = ' ben ' and t2 . air_date = ' chang '
+select t1 . title , t1 . country from cartoon as t1 join tv_series as t2 on t1 . id = t2 . id join tv_channel as t3 on t2 . id = t3 . id where t3 . rating = ' ben ' and t2 . share = ' chang '
+select viewers_m , share from cartoon where episode != ' english '
+select viewers_m , weekly_rank from cartoon where air_date != ' english '
+select t1 . id from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id group by t1 . id having count ( * ) > 2
+select t1 . id from tv_channel as t1 join tv_series as t2 on t1 . id = t2 . id where t2 . channels > 2
+select id from tv_series except select id from cartoon where by = " ben "
+select id from tv_channel except select id from tv_channel where episode = " brittany jones "
+select t1 . episode from tv_series as t1 join cartoon as t2 on t1 . id = t2 . id join cartoon as t3 on t2 . id = t3 . id where t3 . rating = ' ben ' and t1 . air_date = ' ben '
+select t1 . episode from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id where t2 . weekly_rank not in ( select t1 . id from cartoon as t1 join cartoon as t2 on t1 . id = t2 . id where t2 . air_date = " ben " )
+select count ( * ) from people
+select count ( * ) from people
+select nationality from people order by birth_date desc
+select nationality from people order by birth_date desc
+select t1 . nationality , t2 . nationality from people as t1 join people as t2 on t1 . people_id = t2 . people_id where t2 . nationality = " best " and t2 . height < 0
+select t1 . nationality , t2 . nationality from poker_player as t1 join people as t2 on t1 . people_id = t2 . people_id where t2 . nationality = ' best ' and t2 . nationality = ' finishes '
+select avg ( height ) from people
+select avg ( earnings ) from people
+select rank from people order by height desc limit 1
+select rank from people group by rank order by count ( * ) desc limit 1
+select max ( t2 . height ) from poker_player as t1 join people as t2 on t1 . poker_player_id = t2 . people_id where t2 . birth_date < 200000
+select max ( t2 . height ) from poker_player as t1 join people as t2 on t1 . people_id = t2 . people_id where t2 . birth_date < 200000
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id where t2 . birth_date > 300000
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id where t2 . earnings > 300000
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id order by t2 . birth_date asc
+select t1 . name from people as t1 join people as t2 on t1 . people_id = t2 . people_id order by t2 . people_id order by count ( * ) asc
+select height from people order by height asc limit 1
+select birth_date from people order by height asc limit 1
+select rank from people order by rank desc limit 1
+select rank from people order by height desc limit 1
+select avg ( height ) from poker_player where height > 200
+select avg ( earnings ) from people where height > 200
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id order by t2 . earnings desc
+select t1 . name from people as t1 join poker_player as t2 on t1 . people_id = t2 . people_id order by t2 . birth_date desc
+select nation , count ( * ) from people group by nation
+select count ( * ) , nationality from people group by nationality
+select nationality from people group by nationality order by count ( * ) desc limit 1
+select nationality from people group by nationality order by count ( * ) desc limit 1
+select earnings from poker_player group by people_id having count ( * ) >= 2
+select nationality from people group by nationality having count ( * ) >= 2
+select name , birth_date from people order by birth_date asc
+select name , birth_date from people order by name
+select name from people where nationality != ' russia '
+select name from people where nationality != ' russia '
+select name from people where nationality != " poker "
+select name from people where people_id not in ( select people_id from poker_player )
+select count ( distinct nationality ) from people
+select count ( distinct nationality ) from people
+select count ( * ) from area_code_state
+select contestant_name , contestant_name from contestants order by created desc
+select area_code , state , votes from votes
+select max ( minimum ) , min ( created ) from area
+select created from contestants where state = " ca "
+select contestant_name from contestants where state != ' jessie alloway '
+select distinct contestant_name , votes from votes
+select t1 . phone_number , t1 . area_code from contestants as t1 join area_code_state as t2 on t1 . area_code = t2 . area_code group by t1 . area_code having count ( * ) >= 2
+select t1 . vote_id , t1 . contestant_number from votes as t1 join votes as t2 on t1 . contestant_number = t2 . contestant_number order by t2 . votes asc limit 1
+select count ( * ) from contestants where state = " ny " or state = " ca "
+select count ( * ) from votes where contestant_number not in ( select contestant_number from votes )
+select area from votes group by voted order by count ( * ) desc limit 1
+select t1 . contestant_number , t1 . phone_number from votes as t1 join votes as t2 on t1 . contestant_number = t2 . contestant_number where t2 . contestant_name = ' tabatha gehling '
+select t1 . vote_id from votes as t1 join votes as t2 on t1 . vote_id = t2 . vote_id where t2 . contestant_name = ' tabatha gehling ' and t2 . contestant_name = ' contestant gehling ' intersect select t3 . phone_number from contestants as t1 join votes as t2 on t1 . vote_id = t2 . vote_id join contestants as t3 on t1 . contestant_number = t3 . contestant_number where t2 . contestant_name = ' kelly clauss '
+select contestant_number from votes where votes like " % al % "
+select name from country where countrycode > 1950
+select name from countrylanguage where founded > 1950
+select count ( * ) from countrylanguage as t1 join country as t2 on t1 . countrycode = t2 . countrycode where t1 . continent = " government "
+select count ( * ) from countrylanguage where percentage = " republics "
+select sum ( capital ) from country where percentage = ' caribbean '
+select much from countrylanguage where isofficial = ( select percentage from countrylanguage where language = t3 . countrycode where t2 . language = t3 . percentage where t3 . language = t3 . percentage where t3 . language = t3 . percentage where t3 . language = t3 . headofstate where t3 . language = t3 . headofstate where t3 . language = t3 . headofstate where t3 . language = t3 . headofstate where t3 . language = t3 . headofstate where t3 . language = 1
+select continent from countrylanguage
+select distinct t1 . name from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t2 . name = ' anguilla '
+select city from city where district = ' kabul '
+select distinct continent from countrylanguage
+select t1 . name from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode group by t1 . countrycode order by count ( * ) desc limit 1
+select countrycode from countrylanguage where isofficial = ' aruba '
+select population , population from countrylanguage where surfacearea = brazil
+select region , population from city where district = brazil
+select region , code2 from city
+select id , countrycode from city
+select avg ( t2 . isofficial ) from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t1 . name = " central africa "
+select avg ( capital ) from countrylanguage where percentage = " central africa "
+select t1 . name from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t2 . isofficial = ' asia ' order by t2 . headofstate limit 1
+select name from country order by population asc limit 1
+select sum ( capital ) , max ( population ) from countrylanguage where percentage = ' asia '
+select max ( capital ) , sum ( population ) from country where district = ' asia ' group by headofstate order by count ( * ) desc limit 1
+select avg ( capital ) from countrylanguage where percentage = ' african '
+select avg ( capital ) from countrylanguage where district = ' africa '
+select sum ( capital ) from countrylanguage where name = ' asia ' and europe = ' europe '
+select sum ( capital ) from countrylanguage where percentage = ' asia ' or isofficial = ' europe '
+select count ( * ) from city as t1 join country as t2 on t1 . id = t2 . id where district = " gelderland "
+select sum ( population ) from countrylanguage where district = " gelderland of gelderland "
+select avg ( t1 . capital ) from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t2 . isofficial = " nominated "
+select avg ( capital ) , sum ( t1 . capital ) from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t2 . name = ' us '
+select count ( distinct countrycode ) from countrylanguage
+select count ( distinct countrycode ) from countrylanguage
+select count ( * ) from countrylanguage where region = 1
+select count ( distinct countrycode ) from countrylanguage where percentage = ' africa '
+select count ( * ) from countrylanguage where percentage = ' aruba '
+select count ( * ) from country as t1 join country as t2 on t1 . code = t2 . code where isofficial = ' aruba '
+select count ( * ) from city as t1 join country as t2 on t1 . id = t2 . district where t2 . name = ' afghanistan '
+select count ( * ) from city as t1 join country as t2 on t1 . id = t2 . district where t1 . region = ' afghanistan '
+select t1 . name from city as t1 join countrylanguage as t2 on t1 . code = t2 . countrycode group by t2 . name order by count ( * ) desc limit 1
+select t1 . name from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode order by t2 . languages desc limit 1
+select t2 . name from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode group by t1 . countrycode order by count ( * ) desc limit 1
+select name from countrylanguage group by languages order by count ( * ) desc limit 1
+select capital from country where region = " english " intersect select governmentform from country where region = " dutch "
+select count ( * ) from country where region = " english " and isofficial = " dutch "
+select language from countrylanguage where percentage = ' english ' intersect select language from countrylanguage where percentage = " english "
+select language from countrylanguage where name = ' english ' intersect select language from countrylanguage where percentage = ' french '
+select distinct t1 . name from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t2 . name = " english " intersect select t1 . name from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t2 . name = ' english '
+select t1 . name from city as t1 join countrylanguage as t2 on t1 . code = t2 . countrycode where t2 . name = " english " intersect select t1 . name from city as t1 join countrylanguage as t2 on t1 . code = t2 . countrycode where t2 . name = ' english '
+select count ( distinct countrycode ) from countrylanguage where name = " chinese is "
+select count ( * ) from countrylanguage where isofficial = " professor "
+select region from country where region = " english " or region = " dutch "
+select region from country where region = " english "
+select continent from country where district = " english " or district = " dutch "
+select name from country where region >= " english " or official = " dutch "
+select t1 . name from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode group by t1 . countrycode order by count ( * ) desc limit 1
+select countrycode from countrylanguage group by percentage order by count ( * ) desc limit 1
+select t2 . name from country as t1 join country as t2 on t1 . countrycode = t2 . code where t1 . isofficial = " republic "
+select t2 . languages from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode where t1 . isofficial = " government "
+select city from city where region < ( select code2 from city where region = " english "
+select isofficial from countrylanguage where name = ' english ' group by isofficial order by count ( * ) desc limit 1
+select name , region , lifeexpectancy from country order by population desc limit 1
+select t1 . name , t1 . continent , t2 . countrycode from country as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode group by t1 . countrycode order by count ( * ) desc limit 1
+select avg ( capital ) from country where percentage not in ( select countrycode from countrylanguage )
+select avg ( capital ) from countrylanguage where percentage not in ( select countrycode from countrylanguage )
+select count ( * ) from country where district != ' english '
+select count ( * ) from country where id not in ( select countrycode from countrylanguage where region = " english " )
+select t1 . name from city as t1 join country as t2 on t1 . id = t2 . code where t2 . state = ' beatrix '
+select t1 . name from city as t1 join country as t2 on t1 . id = t2 . id join city as t3 on t1 . id = t3 . countrycode where t3 . state = " beatrix "
+select sum ( capital ) from country where founded < 1930
+select district from city where founded < 1930 intersect select distinct t1 . name from city as t1 join country as t2 on t1 . id = t2 . district group by t1 . id ) < t2 . headofstate )
+select countrycode from countrylanguage where country > ' europe '
+select name from country where population > ( select min ( capital ) from country )
+select countrycode from countrylanguage where country = ' asia '
+select countrycode from countrylanguage where country < ' asia '
+select countrycode from country where country > ' africa '
+select indepyear from countrylanguage where country > ' africa '
+select country from country where district != ( select english from country where region = " english "
+select country from country where region not in ( select countrycode from countrylanguage where region = " english " )
+select country from country where population < english
+select country from countrylanguage where region != " english "
+select countrycode from country where region not in ( select countrycode from countrylanguage where district = ' government ' ) and district != " ;
+select code2 from country where region not in ( select countrycode from countrylanguage group by name having sum ( capital ) from countrylanguage where district = ' governments ' )
+select t1 . name from city as t1 join countrylanguage as t2 on t1 . id = t2 . id join countrylanguage as t3 on t2 . countrycode = t3 . countrycode where t3 . name = ' european ' or t3 . countrycode = ' european '
+select name from country where region < ( select min ( population ) from country )
+select distinct t1 . id , t1 . name from city as t1 join country as t2 on t1 . id = t2 . countrycode where t2 . name = " chinese "
+select distinct t1 . name from city as t1 join country as t2 on t1 . code = t2 . code where isofficial = t3 . id where t2 . name = ' chinese '
+select name , continent , lifeexpectancy from city order by population asc limit 1
+select name , continent , lifeexpectancy from country order by population asc limit 1
+select t1 . name , t1 . name , t1 . countrycode from city as t1 join country as t2 on t1 . id = t2 . code group by t1 . id order by sum ( t2 . population ) desc limit 1
+select name , countrycode , countrycode from city order by population desc limit 1
+select t2 . name , t2 . population from city as t1 join country as t2 on t1 . id = t2 . countrycode join country as t3 on t1 . id = t3 . countrycode where t3 . code2 = ' 3 ' group by t1 . name having count ( * ) >= 3
+select t1 . name , t1 . continent from city as t1 join country as t2 on t1 . id = t2 . countrycode group by t1 . countrycode having count ( * ) > 2 intersect select t1 . name , t1 . continent from country as t1 join country as t2 on t1 . countrycode = t2 . countrycode where t2 . countrycode > 2 and t3 . name from countrylanguage as t3 on t2 . countrycode = t3 . countrycode where t3 . continent = " speak "
+select count ( * ) , district from city where population > ( select avg ( population ) from city )
+select count ( * ) , district from city where population > ( select avg ( population ) from country )
+select t1 . name , t3 . continent from country as t1 join country as t2 on t1 . code = t2 . countrycode where t2 . population > 72 group by t1 . name
+select sum ( capital ) , avg ( population ) from country group by name having avg ( capital ) >= 2
+select avg ( capital ) , sum ( capital ) from 72 where region < " group by isofficial
+select countrycode , sum ( capital ) from countrylanguage group by isofficial having avg ( 72 ) < 72
+select name , continent from country order by population desc limit 5
+select t2 . name , t2 . isofficial from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode order by t1 . countrycode desc limit 5
+select name from country order by population desc limit 3
+select name from country order by population desc limit 3
+select name from countrylanguage order by population asc limit 3
+select name from countrylanguage group by name order by count ( * ) desc limit 3
+select count ( * ) from country as t1 join country as t2 on t1 . id = t2 . countrycode where t2 . name = ' asia '
+select count ( * ) from country where district = ' asia '
+select t1 . name from country as t1 join countrylanguage as t2 on t1 . code = t2 . code where isofficial = ( select name from country as t3 join countrylanguage as t4 on t3 . countrycode = t2 . code where region = t3 . countrycode where t3 . language = europe and t2 . language = t3 . capital from countrylanguage as t4 join countrylanguage as t4 on t3 . countrycode = t4 . countrycode where t4 . isofficial = 80000
+select t2 . name from city as t1 join country as t2 on t1 . countrycode = t2 . code where t1 . district = t2 . name where t1 . district = t2 . countrycode where t2 . name = ' europe ' intersect select t1 . name from country as t1 join countrylanguage as t2 on t1 . id = t2 . countrycode where t2 . isofficial = 80000
+select sum ( capital ) , avg ( population ) from countrylanguage where isofficial = " north america " and area > " 3000 "
+select sum ( capital ) , avg ( capital ) from countrylanguage where isofficial = " north america " and area > ' 3000 '
+select name from city where countrycode between 200000 and 900000 % '
+select name from city where countrycode between 200000 and 900000
+select name from country group by region order by count ( * ) desc limit 1
+select countrycode from countrylanguage group by name order by count ( * ) desc limit 1
+select t2 . name , t1 . countrycode from countrylanguage as t1 join countrylanguage as t2 on t1 . countrycode = t2 . countrycode group by t1 . countrycode order by sum ( t2 . percentage ) desc limit 1
+select country , lifeexpectancy from countrylanguage group by languages having max ( capital ) desc limit 1
+select sum ( capital ) from country where name = " spanish " and population = ( select percentage from country group by isofficial order by count ( * ) desc limit 1
+select count ( * ) from countrylanguage where name = " spanish "
+select indepyear from countrylanguage where name = " spanish " and population = ( select percentage from countrylanguage group by name order by count ( * ) desc limit 1
+select countrycode from countrylanguage where language = " spanish "
+select count ( * ) from performance
+select count ( * ) from performance
+select name from conductor order by age asc
+select name from conductor order by age
+select name from performance where name != ' usa '
+select name from conductor where nationality != ' usa '
+select date from orchestra order by founded desc
+select date from orchestra order by founded desc
+select avg ( age ) from conductor
+select avg ( date ) from orchestra
+select max ( attendance ) , min ( attendance ) from orchestra where type != " final "
+select max ( attendance ) , min ( major_record_format ) from orchestra where type != ' final '
+select count ( distinct type ) from show
+select count ( distinct type ) from performance
+select name from performance order by years desc
+select t3 . name from performance as t1 join orchestra as t2 on t1 . show_id = t2 . orchestra_id group by t1 . orchestra_id order by count ( * ) desc
+select type from performance group by orchestra order by count ( * ) desc limit 1
+select t2 . name from performance as t1 join orchestra as t2 on t1 . show_id = t2 . show_id group by t1 . orchestra_id order by sum ( t2 . major_record_format ) desc limit 1
+select t3 . name , t2 . orchestra from performance as t1 join orchestra as t2 on t1 . orchestra_id = t2 . orchestra_id join show as t3 on t1 . show_id = t3 . orchestra_id
+select t3 . name from performance as t1 join orchestra as t2 on t1 . type = t2 . show_id join performance as t3 on t1 . performance_id = t3 . performance_id
+select t2 . name from show as t1 join conductor as t2 on t1 . show_id = t2 . orchestra_id group by t1 . type having count ( * ) > 1
+select t2 . name from show as t1 join orchestra as t2 on t1 . show_id = t2 . orchestra_id group by t1 . type having count ( * ) > 1
+select t2 . name from performance as t1 join orchestra as t2 on t1 . conductor_id = t2 . orchestra_id group by t1 . conductor_id order by count ( * ) desc limit 1
+select t2 . orchestra from performance as t1 join orchestra as t2 on t1 . conductor_id = t2 . orchestra_id group by t1 . conductor_id order by count ( * ) desc limit 1
+select t2 . name from performance as t1 join orchestra as t2 on t1 . conductor_id = t2 . conductor_id where t1 . founded > 2008 and t2 . orchestra > "
+select t2 . name from performance as t1 join orchestra as t2 on t1 . show_id = t2 . orchestra_id where t1 . year = 2008 and t1 . if_first_show = " conducted "
+select nationality , count ( * ) from conductor group by nationality
+select count ( * ) , nationality from conductor as t1 join orchestra as t2 on t1 . show_id = t2 . conductor_id group by orchestra_id
+select conductor_id from orchestra order by formats asc
+select major from conductor order by age asc
+select orchestra_id from performance group by type order by count ( * ) desc limit 1
+select t2 . name from performance as t1 join conductor as t2 on t1 . type = t2 . conductor_id group by t1 . conductor_id order by count ( * ) desc limit 1
+select name from conductor where orchestra_id not in ( select orchestra_id from orchestra )
+select name from conductor where orchestra_id not in ( select orchestra_id from show )
+select year_of_work from conductor where founded < 2003 intersect select nationality from conductor where nationality = ' 2003 '
+select weekly_rank from conductor where founded < 2003 intersect select nationality from conductor where founded > 2003
+select count ( * ) from performance as t1 join orchestra as t2 on t1 . type = t2 . orchestra_id where t1 . result = ' cd ' or t1 . record_company = ' dvd '
+select count ( * ) from performance as t1 join orchestra as t2 on t1 . show_id = t2 . show_id where t2 . year_of_founded = ' cd ' or t1 . result = ' dvd '
+select t2 . orchestra from performance as t1 join orchestra as t2 on t1 . show_id = t2 . show_id where t1 . attendance > 2 group by t1 . orchestra_id having count ( * ) >= 2
+select t2 . date from show as t1 join orchestra as t2 on t1 . show_id = t2 . show_id where t1 . attendance > 0
+select count ( * ) from friend where student_id = " professor "
+select count ( * ) from friend
+select t1 . name , t2 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id
+select t1 . name , t2 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id
+select distinct student_id from likes
+select grade from likes group by grade
+select distinct grade from highschooler as t1 join likes as t2 on t1 . id = t2 . student_id where t1 . grade = t2 . grade where t1 . grade = t2 . grade where t1 . grade = t2 . grade where t1 . grade = t2 . grade where t1 . grade = 2
+select t1 . grade from friend as t1 join likes as t2 on t1 . id = t2 . student_id join highschooler as t3 on t2 . student_id = t3 . student_id where t3 . liked_id = " kyle "
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id where t1 . grade = 10
+select t2 . name from friend as t1 join likes as t2 on t1 . id = t2 . student_id where t2 . student_id = 10
+select t2 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join friend as t3 on t1 . student_id = t3 . student_id where t3 . liked_id = " kyle "
+select t1 . student_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id having count ( * ) = 2
+select count ( * ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id where t2 . liked_id = ' 9 ' and t1 . student_id = "
+select count ( * ) from likes as t1 join highschooler as t2 on t1 . student_id = t2 . student_id where t2 . liked_id = ' grades 9 ' or t2 . liked_id = " 10 "
+select grade , count ( * ) , grade from likes group by grade
+select grade , count ( * ) , grade from likes group by grade
+select grade from likes group by grade order by count ( * ) desc limit 1
+select t1 . grade from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t1 . id from highschooler as t1 join likes as t2 on t1 . id = t2 . student_id group by t1 . id having count ( * ) >= 4
+select grades from friend group by grades having count ( * ) >= 4
+select student_id , liked_id from likes
+select count ( * ) , student_id from likes group by liked_id
+select t2 . name , count ( * ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id
+select t1 . name , count ( * ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t1 . name from highschooler as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t2 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id having count ( * ) >= 3
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join friend as t3 on t1 . student_id = t3 . student_id group by t1 . student_id having count ( * ) >= 3
+select t2 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t1 . student_id = t3 . student_id where t3 . liked_id = " kyle "
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join friend as t3 on t1 . student_id = t3 . student_id where t3 . liked_id = kyle
+select count ( * ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id where t1 . student_id = kyle and t2 . liked_id = " kyle "
+select count ( * ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id where t1 . liked_id = " kyle "
+select student_id from friend except select student_id from likes
+select student_id from likes except select student_id from likes
+select name from highschooler where student_id not in ( select student_id from likes )
+select student_id from highschooler except select student_id from likes
+select t1 . student_id , t1 . student_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t2 . student_id = t3 . student_id where t3 . friend_id = ' else '
+select student_id from likes intersect select student_id from likes
+select t2 . name , t3 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t1 . student_id = t3 . student_id and t3 . friend_id = ' else ' intersect select t3 . name , t3 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t2 . student_id = t3 . student_id and t1 . student_id = t3 . student_id and t3 . friend_id = ' else '
+select t1 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t2 . student_id = t3 . student_id
+select count ( * ) , student_id from likes group by student_id
+select student_id , count ( * ) from likes group by student_id
+select t3 . name , t2 . liked_id from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t1 . student_id = t3 . student_id
+select t2 . name , count ( * ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id order by count ( * ) desc limit 1
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id group by t1 . student_id having count ( * ) >= 2
+select t2 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join likes as t3 on t1 . student_id = t3 . student_id where t3 . liked_id > likes
+select t1 . name from highschooler as t1 join likes as t2 on t1 . student_id = t2 . student_id join friends as t3 on t2 . student_id = t3 . student_id where t3 . liked_id > 5 and t3 . liked_id having count ( * ) >= 2
+select t1 . name from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t2 . student_id = t3 . student_id where t3 . liked_id > 5 and t3 . friend_id >= 2
+select count ( * ) from likes where liked_id = " kyle "
+select sum ( liked_id ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join friend as t3 on t1 . student_id = t3 . student_id where t3 . liked_id = " kyle "
+select avg ( grade ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id
+select avg ( grade ) from friend as t1 join likes as t2 on t1 . student_id = t2 . student_id join highschooler as t3 on t1 . student_id = t3 . student_id
+select min ( grade ) , liked_id from highschooler where student_id not in ( select student_id from likes )
+select min ( grade ) , student_id from highschooler where student_id not in ( select student_id from likes )
+select email_address from owners intersect select email_address from owners
+select breed_name , date_adopted from breeds
+select avg ( t1 . age ) from dogs as t1 join treatment_types as t2 on t1 . dog_id = t2 . treatment_type_code where t2 . first_name = " gone "
+select avg ( age ) from dogs where street = " went "
+select t1 . treatment_type_code , t1 . last_name , min ( t2 . cell_number ) from treatments as t1 join dogs as t2 on t1 . owner_id = t2 . owner_id group by t1 . owner_id having count ( * ) > 2 intersect select t1 . size_description , t1 . size_description from treatments as t1 join professionals as t2 on t1 . owner_id = t2 . owner_id group by t1 . size_code having count ( * ) > 2
+select t2 . email_address , t2 . last_name , t2 . date_of_treatment from treatments as t1 join dogs as t2 on t1 . owner_id = t2 . owner_id group by t1 . owner_id having count ( * ) > 2 union select t1 . first_name , t1 . professional_id from treatments as t1 join dogs as t2 on t1 . owner_id = t2 . treatment_type_code group by t2 . treatment_type_code having count ( * ) > 2
+select email_address from professionals except select email_address from dogs where age > 1000
+select name from dogs where size_code != " spend " and age > 1000
+select t1 . first_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . owner_id
+select t1 . first_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . owner_id
+select professional , role_code , email from dogs where dog_id not in ( select dog_id from treatments )
+select treatment_type_code , zip_code , last_name from dogs where cell_number not in ( select treatment_type_code from treatments )
+select owner , email_address from owners group by owner order by count ( * ) desc limit 1
+select t1 . owner_id , t1 . first_name , t1 . last_name from owners as t1 join charges as t2 on t1 . owner_id = t2 . owner_id group by t1 . breed_code order by count ( * ) desc limit 1
+select t1 . first_name , t1 . last_name , t1 . role_code from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id group by t1 . dog_id having count ( * ) >= 2
+select t1 . dog_id , t1 . name , t1 . role_code from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id group by t1 . dog_id having count ( * ) >= 2
+select t2 . first_name , t2 . treatment_type_description from treatments as t1 join dogs as t2 on t1 . charge_id = t2 . size_code group by t1 . charge_id order by count ( * ) desc limit 1
+select t1 . first_name from professionals as t1 join treatment_types as t2 on t1 . size_code = t2 . size_code group by t1 . treatment_type_code order by count ( * ) desc limit 1
+select t1 . first_name , t1 . last_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . owner_id group by t1 . owner_id order by count ( * ) desc limit 1
+select t1 . her , t1 . last_name , count ( * ) from owners as t1 join breeds as t2 on t1 . breed_code = t2 . breed_code group by t1 . breed_code order by count ( * ) desc limit 1
+select home_phone from dogs group by role_code order by count ( * ) asc limit 1
+select date_of_birth from dogs order by age asc limit 1
+select owner , home_phone from professionals order by age desc limit 1 union select date_of_birth from dogs group by email_address order by sum ( age ) desc limit 1
+select owner , home_phone from professionals group by charge_amount order by sum ( cell_number ) desc limit 1
+select t2 . name , t2 . weight from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id group by t1 . dog_id having count ( * ) >= 2
+select t1 . dog_id , t1 . treatment_type_code from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id group by t1 . dog_id having count ( * ) >= 2
+select t1 . first_name , t1 . last_name from owners as t1 join treatment_types as t2 on t1 . dog_id = t2 . dog_id where t2 . age < 2 and t2 . treatment_type_description = ' done ' and t1 . treatment_type_description = ( select avg ( date_departed ) from dogs )
+select distinct t1 . first_name , t1 . last_name from owners as t1 join treatment_types as t2 on t1 . professional_id = t2 . dog_id where t2 . age < ( select avg ( age ) from dogs )
+select t1 . owner_id , t2 . name from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id join breeds as t3 on t1 . treatment_id = t3 . dog_id
+select t1 . treatment_type_code , t2 . last_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . size_code group by t1 . size_code
+select cost , cell_number from dogs
+select role_code , date_of_birth from dogs
+select t3 . first_name , t3 . last_name , t2 . date_of_treatment from treatments as t1 join owners as t2 on t1 . owner_id = t2 . owner_id join breeds as t3 on t1 . breed_code = t3 . breed_code
+select t1 . first_name , t1 . last_name , t2 . breed_code from owners as t1 join breeds as t2 on t1 . owner_id = t2 . breed_code
+select t1 . first_name , t1 . last_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . owner_id
+select t1 . first_name , t1 . last_name from owners as t1 join charges as t2 on t1 . owner_id = t2 . size_code
+select t1 . name from professionals as t1 join treatment_types as t2 on t1 . dog_id = t2 . dog_id where t2 . first_name = " rarest " and t2 . last_name = " breed "
+select t2 . first_name , t2 . last_name from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id where t1 . first_name = " rarest "
+select t1 . name , t2 . last_name from owners as t1 join treatment_types as t2 on t1 . owner_id = t2 . size_code where t2 . treatment_type_description = ' virginia '
+select t1 . first_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . owner_id where t2 . treatment_type_description = ' virginia ' intersect select t1 . first_name from owners as t1 join treatment_types as t2 on t1 . owner_id = t2 . owner_id
+select t2 . last_name , t2 . last_name from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id where t1 . role_code = " gone through "
+select t2 . age , t2 . cell_number from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id where t1 . role_code = " dogs "
+select name from dogs order by age limit 1
+select t1 . name from owners as t1 join charges as t2 on t1 . breed_code = t2 . size_code order by t2 . age asc limit 1
+select t2 . last_name from owners as t1 join owners as t2 on t1 . owner_id = t2 . owner_id where t1 . breed_name = " hawaii " or t2 . breed_name = " wisconsin "
+select email_address from owners where email_address = " hawaii " or email_address = " wisconsin "
+select t2 . age , t2 . age from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id
+select date_departed , cell_number from charges
+select count ( * ) from dogs where role_code = ' patent '
+select count ( * ) from dogs where zip_code = 0
+select count ( * ) from treatments where role_code = ' dogs '
+select count ( * ) from dogs where zip_code = ' treated '
+select t1 . city , t1 . city , t1 . breed_name from owners as t1 join breeds as t2 on t1 . owner_id = t2 . breed_code where t2 . first_name like " % west % "
+select zip_code , email_address , home_phone from breeds where email_address like " % west % "
+select t2 . breed_name , t2 . first_name , t2 . last_name from owners as t1 join owners as t2 on t1 . breed_code = t2 . breed_code where t1 . first_name like " % north % "
+select first_name , last_name , date_of_birth from breeds where first_name like " % north % "
+select count ( * ) from dogs where age < ( select avg ( age ) from dogs )
+select count ( * ) from dogs where age < ( select avg ( age ) from dogs )
+select much from dogs order by age desc limit 1
+select first_name from dogs order by age desc limit 1
+select count ( * ) from dogs where dog_id not in ( select dog_id from treatments )
+select count ( * ) from dogs where dog_id not in ( select breed_code from treatments )
+select count ( * ) from owners where breed_code not in ( select breed_code from owners )
+select count ( * ) from owners where breed_code not in ( select breed_code from treatments )
+select count ( * ) from dogs where dog_id not in ( select dog_id from treatments )
+select count ( * ) from dogs where dog_id not in ( select treatment_type_code from treatments )
+select name , age , weight from professionals where dog_id not in ( select zip_code from treatments where role_code = ' abandoned ' )
+select t1 . first_name , t1 . last_name , t1 . weight from owners as t1 join treatment_types as t2 on t1 . charge_id = t2 . owner_id where t2 . cell_number = ' abandoned '
+select avg ( age ) from dogs
+select avg ( age ) from dogs
+select age from dogs order by age desc limit 1
+select age from charges order by age desc limit 1
+select much , cell_number from treatment_types where cell_number = ' costs '
+select charge_amount , cell_number from professionals
+select much from dogs group by much order by count ( * ) desc limit 1
+select role_code from dogs group by role_code order by count ( * ) desc limit 1
+select email , email_address , home_phone from owners
+select email_address , email_address , email_address from owners
+select email_address , charge_amount from professionals
+select distinct date_adopted , cell_number from dogs where email_address = ' dogs '
+select t2 . name , t2 . last_name from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id where t1 . age = " done " union select t1 . first_name , t1 . abandoned_yn from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id where t2 . role_code = " done " )
+select t2 . name , t2 . owner_id from treatments as t1 join dogs as t2 on t1 . dog_id = t2 . dog_id
+select count ( * ) from singer
+select count ( * ) from singer
+select name from singer order by net asc
+select name from singer order by net asc
+select year , singer_id from singer
+select citizenship , net_worth_millions from singer
+select name from singer where citizenship != ' france '
+select name from singer where singer_id not in ( select singer_id from song where highest_position = " null " )
+select name from singer where year = 1948 or year = 1949
+select name from song where highest_position = ' 1948 ' or highest_position = ' 1949 '
+select singer_id from song where singer_id = ( select max ( highest_position ) from song where singer_id = ( select song_id from song where singer_id = " net " )
+select t2 . title from singer as t1 join song as t2 on t1 . song_id = t2 . song_id group by t1 . song_id order by count ( * ) desc limit 1
+select citizenship , count ( * ) from singer group by citizenship
+select citizenship , count ( * ) from singer group by citizenship
+select citizenship from singer group by citizenship order by count ( * ) desc limit 1
+select singer from song group by singer order by count ( * ) desc limit 1
+select citizenship , max ( sales ) from song group by citizenship
+select citizenship , max ( sales ) from song group by citizenship
+select t1 . name , t3 . title from song as t1 join singer as t2 on t1 . singer_id = t2 . singer_id
+select name , name from singer
+select distinct t1 . name from song as t1 join singer as t2 on t1 . singer_id = t2 . singer_id where t2 . sales > 300000
+select distinct t1 . name from singer as t1 join song as t2 on t1 . singer_id = t2 . singer_id where t2 . sales > 300000
+select t1 . name from singer as t1 join singer as t2 on t1 . singer_id = t2 . singer_id group by t1 . singer_id having count ( * ) > 1
+select t1 . name from singer as t1 join song as t2 on t1 . singer_id = t2 . singer_id group by t1 . singer_id having count ( * ) > 1
+select t1 . name , sum ( t2 . sales ) from singer as t1 join song as t2 on t1 . singer_id = t2 . singer_id group by t1 . singer_id
+select t1 . name , sum ( t2 . sales ) from singer as t1 join song as t2 on t1 . singer_id = t2 . song_id group by t1 . singer_id
+select name from singer where singer_id not in ( select singer_id from song )
+select song_id from song where song_id not in ( select song_id from song where highest_position = " song " )
+select net_worth_millions from singer where birth_year < ( select max ( net_worth_millions ) from singer where singer_id > 15000 )
+select citizenships from singer where birth_year < 180 intersect select singer_id from singer where year > 1955
+select count ( * ) from other_available_features
+select t2 . property_name from other_property_features as t1 join other_property_features as t2 on t1 . property_id = t2 . property_id where date_on_market = ' aircon '
+select t1 . feature_type_name from ref_feature_types as t1 join ref_property_types as t2 on t1 . feature_type_code = t2 . feature_type_code
+select t2 . feature_type_name from properties as t1 join ref_property_types as t2 on t1 . feature_type_code = t2 . feature_type_code where t1 . houses = " houses " or t1 . room_count > 1

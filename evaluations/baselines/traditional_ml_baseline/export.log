@@ -1,0 +1,38 @@
+[dynet] initializing CUDA
+[dynet] CUDA driver/runtime versions are 13.0/13.0
+Request for 1 GPU ...
+[dynet] Device Number: 0
+[dynet]   Device name: NVIDIA A100-SXM4-80GB
+[dynet]   Memory Bus Width (bits): 5120
+[dynet]   Memory Free (GB): 84.6481/85.0948
+[dynet]
+[dynet] Device(s) selected: 0
+[dynet] random seed: 605133500
+[dynet] allocating memory: 4096MB
+[dynet] memory allocation done.
+Loading vocabularies...
+  Source vocab size: 4871
+  Target vocab size: 2822
+Loading dev dataset...
+  Dev data: /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/processed/spider_dev_processed.jsonl
+  Total dev examples: 1034
+  Spider DB dir: /home/nvikrama/SWM/spider_data/database (found)
+  Evaluating 1034 examples
+
+Initializing model...
+  embed_dim=256, hidden_dim=256
+  Beam size: 1
+Loading checkpoint: checkpoints/model_best.dy
+  Checkpoint loaded successfully.
+
+Evaluating...
+  Using greedy decoding
+======================================================================
+
+Exporting predictions for official Spider evaluation...
+  Saved 1034 predictions to: pred.txt
+  Saved 1034 gold entries to: gold.txt
+
+======================================================================
+Export complete. Use official Spider evaluator for metrics.
+======================================================================

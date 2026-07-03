@@ -1,0 +1,6 @@
+===== FINAL STATUS =====
+Training completed: yes
+Local evaluation completed
+Prediction export completed
+Checkpoint used for eval: checkpoints/model_best.dy
+JOB END: Thu Apr 16 23:30:35 MST 2026

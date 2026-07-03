@@ -1,0 +1,1743 @@
+[dynet] initializing CUDA
+[dynet] CUDA driver/runtime versions are 13.0/13.0
+Request for 1 GPU ...
+[dynet] Device Number: 0
+[dynet]   Device name: NVIDIA A100-SXM4-80GB
+[dynet]   Memory Bus Width (bits): 5120
+[dynet]   Memory Free (GB): 84.6481/85.0948
+[dynet]
+[dynet] Device(s) selected: 0
+[dynet] random seed: 2252342895
+[dynet] allocating memory: 4096MB
+[dynet] memory allocation done.
+Loading vocabularies...
+  Source vocab size: 4871
+  Target vocab size: 2822
+Loading datasets...
+  Train data: /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/processed/spider_train_processed.jsonl
+  Dev data: /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/processed/spider_dev_processed.jsonl
+  Train examples: 7000
+  Dev examples: 1034
+
+*** TRAIN/DEV MODE ***
+  Training on: 7000 examples
+  Full dev set: 1034 examples
+  Training-time dev subset: 1034 examples
+  Eval every: 10 epochs (+ epoch 1 and final)
+
+Initializing model...
+  embed_dim=256, hidden_dim=256
+  Beam size for eval: 1
+  AdamTrainer: lr=0.001, clip=5.0
+
+Starting training for 50 epochs...
+======================================================================
+  epoch 1/50 | step 250/7000
+  epoch 1/50 | step 500/7000
+  epoch 1/50 | step 750/7000
+  epoch 1/50 | step 1000/7000
+  epoch 1/50 | step 1250/7000
+  epoch 1/50 | step 1500/7000
+  epoch 1/50 | step 1750/7000
+  epoch 1/50 | step 2000/7000
+  epoch 1/50 | step 2250/7000
+  epoch 1/50 | step 2500/7000
+  epoch 1/50 | step 2750/7000
+  epoch 1/50 | step 3000/7000
+  epoch 1/50 | step 3250/7000
+  epoch 1/50 | step 3500/7000
+  epoch 1/50 | step 3750/7000
+  epoch 1/50 | step 4000/7000
+  epoch 1/50 | step 4250/7000
+  epoch 1/50 | step 4500/7000
+  epoch 1/50 | step 4750/7000
+  epoch 1/50 | step 5000/7000
+  epoch 1/50 | step 5250/7000
+  epoch 1/50 | step 5500/7000
+  epoch 1/50 | step 5750/7000
+  epoch 1/50 | step 6000/7000
+  epoch 1/50 | step 6250/7000
+  epoch 1/50 | step 6500/7000
+  epoch 1/50 | step 6750/7000
+  epoch 1/50 | step 7000/7000
+
+Epoch 1/50
+  Logged loss: 22.8811 (per-token: 0.0038)
+  Epoch time: 824.9s
+  Token EM:   0.0416 (4.16%) [debug]
+  Norm EM:    0.0416 (4.16%) [used for checkpointing]
+  Sample prediction:
+    Q: How many singers do we have?...
+    Gold: select count ( * ) from singer...
+    Pred: select count ( * ) from stadium...
+    Token match: False
+    Normalized match: False
+  -> Saved latest checkpoint: model_latest.dy
+  -> Saved best checkpoint (norm EM improved to 0.0416)
+  epoch 2/50 | step 250/7000
+  epoch 2/50 | step 500/7000
+  epoch 2/50 | step 750/7000
+  epoch 2/50 | step 1000/7000
+  epoch 2/50 | step 1250/7000
+  epoch 2/50 | step 1500/7000
+  epoch 2/50 | step 1750/7000
+  epoch 2/50 | step 2000/7000
+  epoch 2/50 | step 2250/7000
+  epoch 2/50 | step 2500/7000
+  epoch 2/50 | step 2750/7000
+  epoch 2/50 | step 3000/7000
+  epoch 2/50 | step 3250/7000
+  epoch 2/50 | step 3500/7000
+  epoch 2/50 | step 3750/7000
+  epoch 2/50 | step 4000/7000
+  epoch 2/50 | step 4250/7000
+  epoch 2/50 | step 4500/7000
+  epoch 2/50 | step 4750/7000
+  epoch 2/50 | step 5000/7000
+  epoch 2/50 | step 5250/7000
+  epoch 2/50 | step 5500/7000
+  epoch 2/50 | step 5750/7000
+  epoch 2/50 | step 6000/7000
+  epoch 2/50 | step 6250/7000
+  epoch 2/50 | step 6500/7000
+  epoch 2/50 | step 6750/7000
+  epoch 2/50 | step 7000/7000
+
+Epoch 2/50
+  Logged loss: 12.8247 (per-token: 0.0022)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 3/50 | step 250/7000
+  epoch 3/50 | step 500/7000
+  epoch 3/50 | step 750/7000
+  epoch 3/50 | step 1000/7000
+  epoch 3/50 | step 1250/7000
+  epoch 3/50 | step 1500/7000
+  epoch 3/50 | step 1750/7000
+  epoch 3/50 | step 2000/7000
+  epoch 3/50 | step 2250/7000
+  epoch 3/50 | step 2500/7000
+  epoch 3/50 | step 2750/7000
+  epoch 3/50 | step 3000/7000
+  epoch 3/50 | step 3250/7000
+  epoch 3/50 | step 3500/7000
+  epoch 3/50 | step 3750/7000
+  epoch 3/50 | step 4000/7000
+  epoch 3/50 | step 4250/7000
+  epoch 3/50 | step 4500/7000
+  epoch 3/50 | step 4750/7000
+  epoch 3/50 | step 5000/7000
+  epoch 3/50 | step 5250/7000
+  epoch 3/50 | step 5500/7000
+  epoch 3/50 | step 5750/7000
+  epoch 3/50 | step 6000/7000
+  epoch 3/50 | step 6250/7000
+  epoch 3/50 | step 6500/7000
+  epoch 3/50 | step 6750/7000
+  epoch 3/50 | step 7000/7000
+
+Epoch 3/50
+  Logged loss: 13.9954 (per-token: 0.0023)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 4/50 | step 250/7000
+  epoch 4/50 | step 500/7000
+  epoch 4/50 | step 750/7000
+  epoch 4/50 | step 1000/7000
+  epoch 4/50 | step 1250/7000
+  epoch 4/50 | step 1500/7000
+  epoch 4/50 | step 1750/7000
+  epoch 4/50 | step 2000/7000
+  epoch 4/50 | step 2250/7000
+  epoch 4/50 | step 2500/7000
+  epoch 4/50 | step 2750/7000
+  epoch 4/50 | step 3000/7000
+  epoch 4/50 | step 3250/7000
+  epoch 4/50 | step 3500/7000
+  epoch 4/50 | step 3750/7000
+  epoch 4/50 | step 4000/7000
+  epoch 4/50 | step 4250/7000
+  epoch 4/50 | step 4500/7000
+  epoch 4/50 | step 4750/7000
+  epoch 4/50 | step 5000/7000
+  epoch 4/50 | step 5250/7000
+  epoch 4/50 | step 5500/7000
+  epoch 4/50 | step 5750/7000
+  epoch 4/50 | step 6000/7000
+  epoch 4/50 | step 6250/7000
+  epoch 4/50 | step 6500/7000
+  epoch 4/50 | step 6750/7000
+  epoch 4/50 | step 7000/7000
+
+Epoch 4/50
+  Logged loss: 7.4838 (per-token: 0.0013)
+  Epoch time: 823.9s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 5/50 | step 250/7000
+  epoch 5/50 | step 500/7000
+  epoch 5/50 | step 750/7000
+  epoch 5/50 | step 1000/7000
+  epoch 5/50 | step 1250/7000
+  epoch 5/50 | step 1500/7000
+  epoch 5/50 | step 1750/7000
+  epoch 5/50 | step 2000/7000
+  epoch 5/50 | step 2250/7000
+  epoch 5/50 | step 2500/7000
+  epoch 5/50 | step 2750/7000
+  epoch 5/50 | step 3000/7000
+  epoch 5/50 | step 3250/7000
+  epoch 5/50 | step 3500/7000
+  epoch 5/50 | step 3750/7000
+  epoch 5/50 | step 4000/7000
+  epoch 5/50 | step 4250/7000
+  epoch 5/50 | step 4500/7000
+  epoch 5/50 | step 4750/7000
+  epoch 5/50 | step 5000/7000
+  epoch 5/50 | step 5250/7000
+  epoch 5/50 | step 5500/7000
+  epoch 5/50 | step 5750/7000
+  epoch 5/50 | step 6000/7000
+  epoch 5/50 | step 6250/7000
+  epoch 5/50 | step 6500/7000
+  epoch 5/50 | step 6750/7000
+  epoch 5/50 | step 7000/7000
+
+Epoch 5/50
+  Logged loss: 4.8388 (per-token: 0.0008)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 6/50 | step 250/7000
+  epoch 6/50 | step 500/7000
+  epoch 6/50 | step 750/7000
+  epoch 6/50 | step 1000/7000
+  epoch 6/50 | step 1250/7000
+  epoch 6/50 | step 1500/7000
+  epoch 6/50 | step 1750/7000
+  epoch 6/50 | step 2000/7000
+  epoch 6/50 | step 2250/7000
+  epoch 6/50 | step 2500/7000
+  epoch 6/50 | step 2750/7000
+  epoch 6/50 | step 3000/7000
+  epoch 6/50 | step 3250/7000
+  epoch 6/50 | step 3500/7000
+  epoch 6/50 | step 3750/7000
+  epoch 6/50 | step 4000/7000
+  epoch 6/50 | step 4250/7000
+  epoch 6/50 | step 4500/7000
+  epoch 6/50 | step 4750/7000
+  epoch 6/50 | step 5000/7000
+  epoch 6/50 | step 5250/7000
+  epoch 6/50 | step 5500/7000
+  epoch 6/50 | step 5750/7000
+  epoch 6/50 | step 6000/7000
+  epoch 6/50 | step 6250/7000
+  epoch 6/50 | step 6500/7000
+  epoch 6/50 | step 6750/7000
+  epoch 6/50 | step 7000/7000
+
+Epoch 6/50
+  Logged loss: 5.1687 (per-token: 0.0009)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 7/50 | step 250/7000
+  epoch 7/50 | step 500/7000
+  epoch 7/50 | step 750/7000
+  epoch 7/50 | step 1000/7000
+  epoch 7/50 | step 1250/7000
+  epoch 7/50 | step 1500/7000
+  epoch 7/50 | step 1750/7000
+  epoch 7/50 | step 2000/7000
+  epoch 7/50 | step 2250/7000
+  epoch 7/50 | step 2500/7000
+  epoch 7/50 | step 2750/7000
+  epoch 7/50 | step 3000/7000
+  epoch 7/50 | step 3250/7000
+  epoch 7/50 | step 3500/7000
+  epoch 7/50 | step 3750/7000
+  epoch 7/50 | step 4000/7000
+  epoch 7/50 | step 4250/7000
+  epoch 7/50 | step 4500/7000
+  epoch 7/50 | step 4750/7000
+  epoch 7/50 | step 5000/7000
+  epoch 7/50 | step 5250/7000
+  epoch 7/50 | step 5500/7000
+  epoch 7/50 | step 5750/7000
+  epoch 7/50 | step 6000/7000
+  epoch 7/50 | step 6250/7000
+  epoch 7/50 | step 6500/7000
+  epoch 7/50 | step 6750/7000
+  epoch 7/50 | step 7000/7000
+
+Epoch 7/50
+  Logged loss: 5.6108 (per-token: 0.0009)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 8/50 | step 250/7000
+  epoch 8/50 | step 500/7000
+  epoch 8/50 | step 750/7000
+  epoch 8/50 | step 1000/7000
+  epoch 8/50 | step 1250/7000
+  epoch 8/50 | step 1500/7000
+  epoch 8/50 | step 1750/7000
+  epoch 8/50 | step 2000/7000
+  epoch 8/50 | step 2250/7000
+  epoch 8/50 | step 2500/7000
+  epoch 8/50 | step 2750/7000
+  epoch 8/50 | step 3000/7000
+  epoch 8/50 | step 3250/7000
+  epoch 8/50 | step 3500/7000
+  epoch 8/50 | step 3750/7000
+  epoch 8/50 | step 4000/7000
+  epoch 8/50 | step 4250/7000
+  epoch 8/50 | step 4500/7000
+  epoch 8/50 | step 4750/7000
+  epoch 8/50 | step 5000/7000
+  epoch 8/50 | step 5250/7000
+  epoch 8/50 | step 5500/7000
+  epoch 8/50 | step 5750/7000
+  epoch 8/50 | step 6000/7000
+  epoch 8/50 | step 6250/7000
+  epoch 8/50 | step 6500/7000
+  epoch 8/50 | step 6750/7000
+  epoch 8/50 | step 7000/7000
+
+Epoch 8/50
+  Logged loss: 6.1194 (per-token: 0.0010)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 9/50 | step 250/7000
+  epoch 9/50 | step 500/7000
+  epoch 9/50 | step 750/7000
+  epoch 9/50 | step 1000/7000
+  epoch 9/50 | step 1250/7000
+  epoch 9/50 | step 1500/7000
+  epoch 9/50 | step 1750/7000
+  epoch 9/50 | step 2000/7000
+  epoch 9/50 | step 2250/7000
+  epoch 9/50 | step 2500/7000
+  epoch 9/50 | step 2750/7000
+  epoch 9/50 | step 3000/7000
+  epoch 9/50 | step 3250/7000
+  epoch 9/50 | step 3500/7000
+  epoch 9/50 | step 3750/7000
+  epoch 9/50 | step 4000/7000
+  epoch 9/50 | step 4250/7000
+  epoch 9/50 | step 4500/7000
+  epoch 9/50 | step 4750/7000
+  epoch 9/50 | step 5000/7000
+  epoch 9/50 | step 5250/7000
+  epoch 9/50 | step 5500/7000
+  epoch 9/50 | step 5750/7000
+  epoch 9/50 | step 6000/7000
+  epoch 9/50 | step 6250/7000
+  epoch 9/50 | step 6500/7000
+  epoch 9/50 | step 6750/7000
+  epoch 9/50 | step 7000/7000
+
+Epoch 9/50
+  Logged loss: 3.6493 (per-token: 0.0006)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 10)
+  epoch 10/50 | step 250/7000
+  epoch 10/50 | step 500/7000
+  epoch 10/50 | step 750/7000
+  epoch 10/50 | step 1000/7000
+  epoch 10/50 | step 1250/7000
+  epoch 10/50 | step 1500/7000
+  epoch 10/50 | step 1750/7000
+  epoch 10/50 | step 2000/7000
+  epoch 10/50 | step 2250/7000
+  epoch 10/50 | step 2500/7000
+  epoch 10/50 | step 2750/7000
+  epoch 10/50 | step 3000/7000
+  epoch 10/50 | step 3250/7000
+  epoch 10/50 | step 3500/7000
+  epoch 10/50 | step 3750/7000
+  epoch 10/50 | step 4000/7000
+  epoch 10/50 | step 4250/7000
+  epoch 10/50 | step 4500/7000
+  epoch 10/50 | step 4750/7000
+  epoch 10/50 | step 5000/7000
+  epoch 10/50 | step 5250/7000
+  epoch 10/50 | step 5500/7000
+  epoch 10/50 | step 5750/7000
+  epoch 10/50 | step 6000/7000
+  epoch 10/50 | step 6250/7000
+  epoch 10/50 | step 6500/7000
+  epoch 10/50 | step 6750/7000
+  epoch 10/50 | step 7000/7000
+
+Epoch 10/50
+  Logged loss: 3.1490 (per-token: 0.0005)
+  Epoch time: 824.0s
+  Token EM:   0.0445 (4.45%) [debug]
+  Norm EM:    0.0445 (4.45%) [used for checkpointing]
+  Sample prediction:
+    Q: How many singers do we have?...
+    Gold: select count ( * ) from singer...
+    Pred: select count ( * ) from stadium...
+    Token match: False
+    Normalized match: False
+  -> Saved latest checkpoint: model_latest.dy
+  -> Saved best checkpoint (norm EM improved to 0.0445)
+  epoch 11/50 | step 250/7000
+  epoch 11/50 | step 500/7000
+  epoch 11/50 | step 750/7000
+  epoch 11/50 | step 1000/7000
+  epoch 11/50 | step 1250/7000
+  epoch 11/50 | step 1500/7000
+  epoch 11/50 | step 1750/7000
+  epoch 11/50 | step 2000/7000
+  epoch 11/50 | step 2250/7000
+  epoch 11/50 | step 2500/7000
+  epoch 11/50 | step 2750/7000
+  epoch 11/50 | step 3000/7000
+  epoch 11/50 | step 3250/7000
+  epoch 11/50 | step 3500/7000
+  epoch 11/50 | step 3750/7000
+  epoch 11/50 | step 4000/7000
+  epoch 11/50 | step 4250/7000
+  epoch 11/50 | step 4500/7000
+  epoch 11/50 | step 4750/7000
+  epoch 11/50 | step 5000/7000
+  epoch 11/50 | step 5250/7000
+  epoch 11/50 | step 5500/7000
+  epoch 11/50 | step 5750/7000
+  epoch 11/50 | step 6000/7000
+  epoch 11/50 | step 6250/7000
+  epoch 11/50 | step 6500/7000
+  epoch 11/50 | step 6750/7000
+  epoch 11/50 | step 7000/7000
+
+Epoch 11/50
+  Logged loss: 3.2269 (per-token: 0.0005)
+  Epoch time: 824.3s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 12/50 | step 250/7000
+  epoch 12/50 | step 500/7000
+  epoch 12/50 | step 750/7000
+  epoch 12/50 | step 1000/7000
+  epoch 12/50 | step 1250/7000
+  epoch 12/50 | step 1500/7000
+  epoch 12/50 | step 1750/7000
+  epoch 12/50 | step 2000/7000
+  epoch 12/50 | step 2250/7000
+  epoch 12/50 | step 2500/7000
+  epoch 12/50 | step 2750/7000
+  epoch 12/50 | step 3000/7000
+  epoch 12/50 | step 3250/7000
+  epoch 12/50 | step 3500/7000
+  epoch 12/50 | step 3750/7000
+  epoch 12/50 | step 4000/7000
+  epoch 12/50 | step 4250/7000
+  epoch 12/50 | step 4500/7000
+  epoch 12/50 | step 4750/7000
+  epoch 12/50 | step 5000/7000
+  epoch 12/50 | step 5250/7000
+  epoch 12/50 | step 5500/7000
+  epoch 12/50 | step 5750/7000
+  epoch 12/50 | step 6000/7000
+  epoch 12/50 | step 6250/7000
+  epoch 12/50 | step 6500/7000
+  epoch 12/50 | step 6750/7000
+  epoch 12/50 | step 7000/7000
+
+Epoch 12/50
+  Logged loss: 2.6449 (per-token: 0.0004)
+  Epoch time: 824.3s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 13/50 | step 250/7000
+  epoch 13/50 | step 500/7000
+  epoch 13/50 | step 750/7000
+  epoch 13/50 | step 1000/7000
+  epoch 13/50 | step 1250/7000
+  epoch 13/50 | step 1500/7000
+  epoch 13/50 | step 1750/7000
+  epoch 13/50 | step 2000/7000
+  epoch 13/50 | step 2250/7000
+  epoch 13/50 | step 2500/7000
+  epoch 13/50 | step 2750/7000
+  epoch 13/50 | step 3000/7000
+  epoch 13/50 | step 3250/7000
+  epoch 13/50 | step 3500/7000
+  epoch 13/50 | step 3750/7000
+  epoch 13/50 | step 4000/7000
+  epoch 13/50 | step 4250/7000
+  epoch 13/50 | step 4500/7000
+  epoch 13/50 | step 4750/7000
+  epoch 13/50 | step 5000/7000
+  epoch 13/50 | step 5250/7000
+  epoch 13/50 | step 5500/7000
+  epoch 13/50 | step 5750/7000
+  epoch 13/50 | step 6000/7000
+  epoch 13/50 | step 6250/7000
+  epoch 13/50 | step 6500/7000
+  epoch 13/50 | step 6750/7000
+  epoch 13/50 | step 7000/7000
+
+Epoch 13/50
+  Logged loss: 1.1582 (per-token: 0.0002)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 14/50 | step 250/7000
+  epoch 14/50 | step 500/7000
+  epoch 14/50 | step 750/7000
+  epoch 14/50 | step 1000/7000
+  epoch 14/50 | step 1250/7000
+  epoch 14/50 | step 1500/7000
+  epoch 14/50 | step 1750/7000
+  epoch 14/50 | step 2000/7000
+  epoch 14/50 | step 2250/7000
+  epoch 14/50 | step 2500/7000
+  epoch 14/50 | step 2750/7000
+  epoch 14/50 | step 3000/7000
+  epoch 14/50 | step 3250/7000
+  epoch 14/50 | step 3500/7000
+  epoch 14/50 | step 3750/7000
+  epoch 14/50 | step 4000/7000
+  epoch 14/50 | step 4250/7000
+  epoch 14/50 | step 4500/7000
+  epoch 14/50 | step 4750/7000
+  epoch 14/50 | step 5000/7000
+  epoch 14/50 | step 5250/7000
+  epoch 14/50 | step 5500/7000
+  epoch 14/50 | step 5750/7000
+  epoch 14/50 | step 6000/7000
+  epoch 14/50 | step 6250/7000
+  epoch 14/50 | step 6500/7000
+  epoch 14/50 | step 6750/7000
+  epoch 14/50 | step 7000/7000
+
+Epoch 14/50
+  Logged loss: 2.9935 (per-token: 0.0005)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 15/50 | step 250/7000
+  epoch 15/50 | step 500/7000
+  epoch 15/50 | step 750/7000
+  epoch 15/50 | step 1000/7000
+  epoch 15/50 | step 1250/7000
+  epoch 15/50 | step 1500/7000
+  epoch 15/50 | step 1750/7000
+  epoch 15/50 | step 2000/7000
+  epoch 15/50 | step 2250/7000
+  epoch 15/50 | step 2500/7000
+  epoch 15/50 | step 2750/7000
+  epoch 15/50 | step 3000/7000
+  epoch 15/50 | step 3250/7000
+  epoch 15/50 | step 3500/7000
+  epoch 15/50 | step 3750/7000
+  epoch 15/50 | step 4000/7000
+  epoch 15/50 | step 4250/7000
+  epoch 15/50 | step 4500/7000
+  epoch 15/50 | step 4750/7000
+  epoch 15/50 | step 5000/7000
+  epoch 15/50 | step 5250/7000
+  epoch 15/50 | step 5500/7000
+  epoch 15/50 | step 5750/7000
+  epoch 15/50 | step 6000/7000
+  epoch 15/50 | step 6250/7000
+  epoch 15/50 | step 6500/7000
+  epoch 15/50 | step 6750/7000
+  epoch 15/50 | step 7000/7000
+
+Epoch 15/50
+  Logged loss: 4.0604 (per-token: 0.0007)
+  Epoch time: 824.3s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 16/50 | step 250/7000
+  epoch 16/50 | step 500/7000
+  epoch 16/50 | step 750/7000
+  epoch 16/50 | step 1000/7000
+  epoch 16/50 | step 1250/7000
+  epoch 16/50 | step 1500/7000
+  epoch 16/50 | step 1750/7000
+  epoch 16/50 | step 2000/7000
+  epoch 16/50 | step 2250/7000
+  epoch 16/50 | step 2500/7000
+  epoch 16/50 | step 2750/7000
+  epoch 16/50 | step 3000/7000
+  epoch 16/50 | step 3250/7000
+  epoch 16/50 | step 3500/7000
+  epoch 16/50 | step 3750/7000
+  epoch 16/50 | step 4000/7000
+  epoch 16/50 | step 4250/7000
+  epoch 16/50 | step 4500/7000
+  epoch 16/50 | step 4750/7000
+  epoch 16/50 | step 5000/7000
+  epoch 16/50 | step 5250/7000
+  epoch 16/50 | step 5500/7000
+  epoch 16/50 | step 5750/7000
+  epoch 16/50 | step 6000/7000
+  epoch 16/50 | step 6250/7000
+  epoch 16/50 | step 6500/7000
+  epoch 16/50 | step 6750/7000
+  epoch 16/50 | step 7000/7000
+
+Epoch 16/50
+  Logged loss: 1.6118 (per-token: 0.0003)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 17/50 | step 250/7000
+  epoch 17/50 | step 500/7000
+  epoch 17/50 | step 750/7000
+  epoch 17/50 | step 1000/7000
+  epoch 17/50 | step 1250/7000
+  epoch 17/50 | step 1500/7000
+  epoch 17/50 | step 1750/7000
+  epoch 17/50 | step 2000/7000
+  epoch 17/50 | step 2250/7000
+  epoch 17/50 | step 2500/7000
+  epoch 17/50 | step 2750/7000
+  epoch 17/50 | step 3000/7000
+  epoch 17/50 | step 3250/7000
+  epoch 17/50 | step 3500/7000
+  epoch 17/50 | step 3750/7000
+  epoch 17/50 | step 4000/7000
+  epoch 17/50 | step 4250/7000
+  epoch 17/50 | step 4500/7000
+  epoch 17/50 | step 4750/7000
+  epoch 17/50 | step 5000/7000
+  epoch 17/50 | step 5250/7000
+  epoch 17/50 | step 5500/7000
+  epoch 17/50 | step 5750/7000
+  epoch 17/50 | step 6000/7000
+  epoch 17/50 | step 6250/7000
+  epoch 17/50 | step 6500/7000
+  epoch 17/50 | step 6750/7000
+  epoch 17/50 | step 7000/7000
+
+Epoch 17/50
+  Logged loss: 3.1019 (per-token: 0.0005)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 18/50 | step 250/7000
+  epoch 18/50 | step 500/7000
+  epoch 18/50 | step 750/7000
+  epoch 18/50 | step 1000/7000
+  epoch 18/50 | step 1250/7000
+  epoch 18/50 | step 1500/7000
+  epoch 18/50 | step 1750/7000
+  epoch 18/50 | step 2000/7000
+  epoch 18/50 | step 2250/7000
+  epoch 18/50 | step 2500/7000
+  epoch 18/50 | step 2750/7000
+  epoch 18/50 | step 3000/7000
+  epoch 18/50 | step 3250/7000
+  epoch 18/50 | step 3500/7000
+  epoch 18/50 | step 3750/7000
+  epoch 18/50 | step 4000/7000
+  epoch 18/50 | step 4250/7000
+  epoch 18/50 | step 4500/7000
+  epoch 18/50 | step 4750/7000
+  epoch 18/50 | step 5000/7000
+  epoch 18/50 | step 5250/7000
+  epoch 18/50 | step 5500/7000
+  epoch 18/50 | step 5750/7000
+  epoch 18/50 | step 6000/7000
+  epoch 18/50 | step 6250/7000
+  epoch 18/50 | step 6500/7000
+  epoch 18/50 | step 6750/7000
+  epoch 18/50 | step 7000/7000
+
+Epoch 18/50
+  Logged loss: 2.9438 (per-token: 0.0005)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 19/50 | step 250/7000
+  epoch 19/50 | step 500/7000
+  epoch 19/50 | step 750/7000
+  epoch 19/50 | step 1000/7000
+  epoch 19/50 | step 1250/7000
+  epoch 19/50 | step 1500/7000
+  epoch 19/50 | step 1750/7000
+  epoch 19/50 | step 2000/7000
+  epoch 19/50 | step 2250/7000
+  epoch 19/50 | step 2500/7000
+  epoch 19/50 | step 2750/7000
+  epoch 19/50 | step 3000/7000
+  epoch 19/50 | step 3250/7000
+  epoch 19/50 | step 3500/7000
+  epoch 19/50 | step 3750/7000
+  epoch 19/50 | step 4000/7000
+  epoch 19/50 | step 4250/7000
+  epoch 19/50 | step 4500/7000
+  epoch 19/50 | step 4750/7000
+  epoch 19/50 | step 5000/7000
+  epoch 19/50 | step 5250/7000
+  epoch 19/50 | step 5500/7000
+  epoch 19/50 | step 5750/7000
+  epoch 19/50 | step 6000/7000
+  epoch 19/50 | step 6250/7000
+  epoch 19/50 | step 6500/7000
+  epoch 19/50 | step 6750/7000
+  epoch 19/50 | step 7000/7000
+
+Epoch 19/50
+  Logged loss: 1.8302 (per-token: 0.0003)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 20)
+  epoch 20/50 | step 250/7000
+  epoch 20/50 | step 500/7000
+  epoch 20/50 | step 750/7000
+  epoch 20/50 | step 1000/7000
+  epoch 20/50 | step 1250/7000
+  epoch 20/50 | step 1500/7000
+  epoch 20/50 | step 1750/7000
+  epoch 20/50 | step 2000/7000
+  epoch 20/50 | step 2250/7000
+  epoch 20/50 | step 2500/7000
+  epoch 20/50 | step 2750/7000
+  epoch 20/50 | step 3000/7000
+  epoch 20/50 | step 3250/7000
+  epoch 20/50 | step 3500/7000
+  epoch 20/50 | step 3750/7000
+  epoch 20/50 | step 4000/7000
+  epoch 20/50 | step 4250/7000
+  epoch 20/50 | step 4500/7000
+  epoch 20/50 | step 4750/7000
+  epoch 20/50 | step 5000/7000
+  epoch 20/50 | step 5250/7000
+  epoch 20/50 | step 5500/7000
+  epoch 20/50 | step 5750/7000
+  epoch 20/50 | step 6000/7000
+  epoch 20/50 | step 6250/7000
+  epoch 20/50 | step 6500/7000
+  epoch 20/50 | step 6750/7000
+  epoch 20/50 | step 7000/7000
+
+Epoch 20/50
+  Logged loss: 0.9049 (per-token: 0.0002)
+  Epoch time: 824.4s
+  Token EM:   0.0474 (4.74%) [debug]
+  Norm EM:    0.0474 (4.74%) [used for checkpointing]
+  Sample prediction:
+    Q: How many singers do we have?...
+    Gold: select count ( * ) from singer...
+    Pred: select count ( * ) from stadium...
+    Token match: False
+    Normalized match: False
+  -> Saved latest checkpoint: model_latest.dy
+  -> Saved best checkpoint (norm EM improved to 0.0474)
+  epoch 21/50 | step 250/7000
+  epoch 21/50 | step 500/7000
+  epoch 21/50 | step 750/7000
+  epoch 21/50 | step 1000/7000
+  epoch 21/50 | step 1250/7000
+  epoch 21/50 | step 1500/7000
+  epoch 21/50 | step 1750/7000
+  epoch 21/50 | step 2000/7000
+  epoch 21/50 | step 2250/7000
+  epoch 21/50 | step 2500/7000
+  epoch 21/50 | step 2750/7000
+  epoch 21/50 | step 3000/7000
+  epoch 21/50 | step 3250/7000
+  epoch 21/50 | step 3500/7000
+  epoch 21/50 | step 3750/7000
+  epoch 21/50 | step 4000/7000
+  epoch 21/50 | step 4250/7000
+  epoch 21/50 | step 4500/7000
+  epoch 21/50 | step 4750/7000
+  epoch 21/50 | step 5000/7000
+  epoch 21/50 | step 5250/7000
+  epoch 21/50 | step 5500/7000
+  epoch 21/50 | step 5750/7000
+  epoch 21/50 | step 6000/7000
+  epoch 21/50 | step 6250/7000
+  epoch 21/50 | step 6500/7000
+  epoch 21/50 | step 6750/7000
+  epoch 21/50 | step 7000/7000
+
+Epoch 21/50
+  Logged loss: 3.5021 (per-token: 0.0006)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 22/50 | step 250/7000
+  epoch 22/50 | step 500/7000
+  epoch 22/50 | step 750/7000
+  epoch 22/50 | step 1000/7000
+  epoch 22/50 | step 1250/7000
+  epoch 22/50 | step 1500/7000
+  epoch 22/50 | step 1750/7000
+  epoch 22/50 | step 2000/7000
+  epoch 22/50 | step 2250/7000
+  epoch 22/50 | step 2500/7000
+  epoch 22/50 | step 2750/7000
+  epoch 22/50 | step 3000/7000
+  epoch 22/50 | step 3250/7000
+  epoch 22/50 | step 3500/7000
+  epoch 22/50 | step 3750/7000
+  epoch 22/50 | step 4000/7000
+  epoch 22/50 | step 4250/7000
+  epoch 22/50 | step 4500/7000
+  epoch 22/50 | step 4750/7000
+  epoch 22/50 | step 5000/7000
+  epoch 22/50 | step 5250/7000
+  epoch 22/50 | step 5500/7000
+  epoch 22/50 | step 5750/7000
+  epoch 22/50 | step 6000/7000
+  epoch 22/50 | step 6250/7000
+  epoch 22/50 | step 6500/7000
+  epoch 22/50 | step 6750/7000
+  epoch 22/50 | step 7000/7000
+
+Epoch 22/50
+  Logged loss: 2.7857 (per-token: 0.0005)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 23/50 | step 250/7000
+  epoch 23/50 | step 500/7000
+  epoch 23/50 | step 750/7000
+  epoch 23/50 | step 1000/7000
+  epoch 23/50 | step 1250/7000
+  epoch 23/50 | step 1500/7000
+  epoch 23/50 | step 1750/7000
+  epoch 23/50 | step 2000/7000
+  epoch 23/50 | step 2250/7000
+  epoch 23/50 | step 2500/7000
+  epoch 23/50 | step 2750/7000
+  epoch 23/50 | step 3000/7000
+  epoch 23/50 | step 3250/7000
+  epoch 23/50 | step 3500/7000
+  epoch 23/50 | step 3750/7000
+  epoch 23/50 | step 4000/7000
+  epoch 23/50 | step 4250/7000
+  epoch 23/50 | step 4500/7000
+  epoch 23/50 | step 4750/7000
+  epoch 23/50 | step 5000/7000
+  epoch 23/50 | step 5250/7000
+  epoch 23/50 | step 5500/7000
+  epoch 23/50 | step 5750/7000
+  epoch 23/50 | step 6000/7000
+  epoch 23/50 | step 6250/7000
+  epoch 23/50 | step 6500/7000
+  epoch 23/50 | step 6750/7000
+  epoch 23/50 | step 7000/7000
+
+Epoch 23/50
+  Logged loss: 2.9842 (per-token: 0.0005)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 24/50 | step 250/7000
+  epoch 24/50 | step 500/7000
+  epoch 24/50 | step 750/7000
+  epoch 24/50 | step 1000/7000
+  epoch 24/50 | step 1250/7000
+  epoch 24/50 | step 1500/7000
+  epoch 24/50 | step 1750/7000
+  epoch 24/50 | step 2000/7000
+  epoch 24/50 | step 2250/7000
+  epoch 24/50 | step 2500/7000
+  epoch 24/50 | step 2750/7000
+  epoch 24/50 | step 3000/7000
+  epoch 24/50 | step 3250/7000
+  epoch 24/50 | step 3500/7000
+  epoch 24/50 | step 3750/7000
+  epoch 24/50 | step 4000/7000
+  epoch 24/50 | step 4250/7000
+  epoch 24/50 | step 4500/7000
+  epoch 24/50 | step 4750/7000
+  epoch 24/50 | step 5000/7000
+  epoch 24/50 | step 5250/7000
+  epoch 24/50 | step 5500/7000
+  epoch 24/50 | step 5750/7000
+  epoch 24/50 | step 6000/7000
+  epoch 24/50 | step 6250/7000
+  epoch 24/50 | step 6500/7000
+  epoch 24/50 | step 6750/7000
+  epoch 24/50 | step 7000/7000
+
+Epoch 24/50
+  Logged loss: 2.1230 (per-token: 0.0004)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 25/50 | step 250/7000
+  epoch 25/50 | step 500/7000
+  epoch 25/50 | step 750/7000
+  epoch 25/50 | step 1000/7000
+  epoch 25/50 | step 1250/7000
+  epoch 25/50 | step 1500/7000
+  epoch 25/50 | step 1750/7000
+  epoch 25/50 | step 2000/7000
+  epoch 25/50 | step 2250/7000
+  epoch 25/50 | step 2500/7000
+  epoch 25/50 | step 2750/7000
+  epoch 25/50 | step 3000/7000
+  epoch 25/50 | step 3250/7000
+  epoch 25/50 | step 3500/7000
+  epoch 25/50 | step 3750/7000
+  epoch 25/50 | step 4000/7000
+  epoch 25/50 | step 4250/7000
+  epoch 25/50 | step 4500/7000
+  epoch 25/50 | step 4750/7000
+  epoch 25/50 | step 5000/7000
+  epoch 25/50 | step 5250/7000
+  epoch 25/50 | step 5500/7000
+  epoch 25/50 | step 5750/7000
+  epoch 25/50 | step 6000/7000
+  epoch 25/50 | step 6250/7000
+  epoch 25/50 | step 6500/7000
+  epoch 25/50 | step 6750/7000
+  epoch 25/50 | step 7000/7000
+
+Epoch 25/50
+  Logged loss: 2.5607 (per-token: 0.0004)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 26/50 | step 250/7000
+  epoch 26/50 | step 500/7000
+  epoch 26/50 | step 750/7000
+  epoch 26/50 | step 1000/7000
+  epoch 26/50 | step 1250/7000
+  epoch 26/50 | step 1500/7000
+  epoch 26/50 | step 1750/7000
+  epoch 26/50 | step 2000/7000
+  epoch 26/50 | step 2250/7000
+  epoch 26/50 | step 2500/7000
+  epoch 26/50 | step 2750/7000
+  epoch 26/50 | step 3000/7000
+  epoch 26/50 | step 3250/7000
+  epoch 26/50 | step 3500/7000
+  epoch 26/50 | step 3750/7000
+  epoch 26/50 | step 4000/7000
+  epoch 26/50 | step 4250/7000
+  epoch 26/50 | step 4500/7000
+  epoch 26/50 | step 4750/7000
+  epoch 26/50 | step 5000/7000
+  epoch 26/50 | step 5250/7000
+  epoch 26/50 | step 5500/7000
+  epoch 26/50 | step 5750/7000
+  epoch 26/50 | step 6000/7000
+  epoch 26/50 | step 6250/7000
+  epoch 26/50 | step 6500/7000
+  epoch 26/50 | step 6750/7000
+  epoch 26/50 | step 7000/7000
+
+Epoch 26/50
+  Logged loss: 1.1998 (per-token: 0.0002)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 27/50 | step 250/7000
+  epoch 27/50 | step 500/7000
+  epoch 27/50 | step 750/7000
+  epoch 27/50 | step 1000/7000
+  epoch 27/50 | step 1250/7000
+  epoch 27/50 | step 1500/7000
+  epoch 27/50 | step 1750/7000
+  epoch 27/50 | step 2000/7000
+  epoch 27/50 | step 2250/7000
+  epoch 27/50 | step 2500/7000
+  epoch 27/50 | step 2750/7000
+  epoch 27/50 | step 3000/7000
+  epoch 27/50 | step 3250/7000
+  epoch 27/50 | step 3500/7000
+  epoch 27/50 | step 3750/7000
+  epoch 27/50 | step 4000/7000
+  epoch 27/50 | step 4250/7000
+  epoch 27/50 | step 4500/7000
+  epoch 27/50 | step 4750/7000
+  epoch 27/50 | step 5000/7000
+  epoch 27/50 | step 5250/7000
+  epoch 27/50 | step 5500/7000
+  epoch 27/50 | step 5750/7000
+  epoch 27/50 | step 6000/7000
+  epoch 27/50 | step 6250/7000
+  epoch 27/50 | step 6500/7000
+  epoch 27/50 | step 6750/7000
+  epoch 27/50 | step 7000/7000
+
+Epoch 27/50
+  Logged loss: 1.2661 (per-token: 0.0002)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 28/50 | step 250/7000
+  epoch 28/50 | step 500/7000
+  epoch 28/50 | step 750/7000
+  epoch 28/50 | step 1000/7000
+  epoch 28/50 | step 1250/7000
+  epoch 28/50 | step 1500/7000
+  epoch 28/50 | step 1750/7000
+  epoch 28/50 | step 2000/7000
+  epoch 28/50 | step 2250/7000
+  epoch 28/50 | step 2500/7000
+  epoch 28/50 | step 2750/7000
+  epoch 28/50 | step 3000/7000
+  epoch 28/50 | step 3250/7000
+  epoch 28/50 | step 3500/7000
+  epoch 28/50 | step 3750/7000
+  epoch 28/50 | step 4000/7000
+  epoch 28/50 | step 4250/7000
+  epoch 28/50 | step 4500/7000
+  epoch 28/50 | step 4750/7000
+  epoch 28/50 | step 5000/7000
+  epoch 28/50 | step 5250/7000
+  epoch 28/50 | step 5500/7000
+  epoch 28/50 | step 5750/7000
+  epoch 28/50 | step 6000/7000
+  epoch 28/50 | step 6250/7000
+  epoch 28/50 | step 6500/7000
+  epoch 28/50 | step 6750/7000
+  epoch 28/50 | step 7000/7000
+
+Epoch 28/50
+  Logged loss: 2.6736 (per-token: 0.0004)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 29/50 | step 250/7000
+  epoch 29/50 | step 500/7000
+  epoch 29/50 | step 750/7000
+  epoch 29/50 | step 1000/7000
+  epoch 29/50 | step 1250/7000
+  epoch 29/50 | step 1500/7000
+  epoch 29/50 | step 1750/7000
+  epoch 29/50 | step 2000/7000
+  epoch 29/50 | step 2250/7000
+  epoch 29/50 | step 2500/7000
+  epoch 29/50 | step 2750/7000
+  epoch 29/50 | step 3000/7000
+  epoch 29/50 | step 3250/7000
+  epoch 29/50 | step 3500/7000
+  epoch 29/50 | step 3750/7000
+  epoch 29/50 | step 4000/7000
+  epoch 29/50 | step 4250/7000
+  epoch 29/50 | step 4500/7000
+  epoch 29/50 | step 4750/7000
+  epoch 29/50 | step 5000/7000
+  epoch 29/50 | step 5250/7000
+  epoch 29/50 | step 5500/7000
+  epoch 29/50 | step 5750/7000
+  epoch 29/50 | step 6000/7000
+  epoch 29/50 | step 6250/7000
+  epoch 29/50 | step 6500/7000
+  epoch 29/50 | step 6750/7000
+  epoch 29/50 | step 7000/7000
+
+Epoch 29/50
+  Logged loss: 3.1806 (per-token: 0.0005)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 30)
+  epoch 30/50 | step 250/7000
+  epoch 30/50 | step 500/7000
+  epoch 30/50 | step 750/7000
+  epoch 30/50 | step 1000/7000
+  epoch 30/50 | step 1250/7000
+  epoch 30/50 | step 1500/7000
+  epoch 30/50 | step 1750/7000
+  epoch 30/50 | step 2000/7000
+  epoch 30/50 | step 2250/7000
+  epoch 30/50 | step 2500/7000
+  epoch 30/50 | step 2750/7000
+  epoch 30/50 | step 3000/7000
+  epoch 30/50 | step 3250/7000
+  epoch 30/50 | step 3500/7000
+  epoch 30/50 | step 3750/7000
+  epoch 30/50 | step 4000/7000
+  epoch 30/50 | step 4250/7000
+  epoch 30/50 | step 4500/7000
+  epoch 30/50 | step 4750/7000
+  epoch 30/50 | step 5000/7000
+  epoch 30/50 | step 5250/7000
+  epoch 30/50 | step 5500/7000
+  epoch 30/50 | step 5750/7000
+  epoch 30/50 | step 6000/7000
+  epoch 30/50 | step 6250/7000
+  epoch 30/50 | step 6500/7000
+  epoch 30/50 | step 6750/7000
+  epoch 30/50 | step 7000/7000
+
+Epoch 30/50
+  Logged loss: 1.5403 (per-token: 0.0003)
+  Epoch time: 824.1s
+  Token EM:   0.0387 (3.87%) [debug]
+  Norm EM:    0.0387 (3.87%) [used for checkpointing]
+  Sample prediction:
+    Q: How many singers do we have?...
+    Gold: select count ( * ) from singer...
+    Pred: select count ( * ) from stadium...
+    Token match: False
+    Normalized match: False
+  -> Saved latest checkpoint: model_latest.dy
+  epoch 31/50 | step 250/7000
+  epoch 31/50 | step 500/7000
+  epoch 31/50 | step 750/7000
+  epoch 31/50 | step 1000/7000
+  epoch 31/50 | step 1250/7000
+  epoch 31/50 | step 1500/7000
+  epoch 31/50 | step 1750/7000
+  epoch 31/50 | step 2000/7000
+  epoch 31/50 | step 2250/7000
+  epoch 31/50 | step 2500/7000
+  epoch 31/50 | step 2750/7000
+  epoch 31/50 | step 3000/7000
+  epoch 31/50 | step 3250/7000
+  epoch 31/50 | step 3500/7000
+  epoch 31/50 | step 3750/7000
+  epoch 31/50 | step 4000/7000
+  epoch 31/50 | step 4250/7000
+  epoch 31/50 | step 4500/7000
+  epoch 31/50 | step 4750/7000
+  epoch 31/50 | step 5000/7000
+  epoch 31/50 | step 5250/7000
+  epoch 31/50 | step 5500/7000
+  epoch 31/50 | step 5750/7000
+  epoch 31/50 | step 6000/7000
+  epoch 31/50 | step 6250/7000
+  epoch 31/50 | step 6500/7000
+  epoch 31/50 | step 6750/7000
+  epoch 31/50 | step 7000/7000
+
+Epoch 31/50
+  Logged loss: 0.3970 (per-token: 0.0001)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 32/50 | step 250/7000
+  epoch 32/50 | step 500/7000
+  epoch 32/50 | step 750/7000
+  epoch 32/50 | step 1000/7000
+  epoch 32/50 | step 1250/7000
+  epoch 32/50 | step 1500/7000
+  epoch 32/50 | step 1750/7000
+  epoch 32/50 | step 2000/7000
+  epoch 32/50 | step 2250/7000
+  epoch 32/50 | step 2500/7000
+  epoch 32/50 | step 2750/7000
+  epoch 32/50 | step 3000/7000
+  epoch 32/50 | step 3250/7000
+  epoch 32/50 | step 3500/7000
+  epoch 32/50 | step 3750/7000
+  epoch 32/50 | step 4000/7000
+  epoch 32/50 | step 4250/7000
+  epoch 32/50 | step 4500/7000
+  epoch 32/50 | step 4750/7000
+  epoch 32/50 | step 5000/7000
+  epoch 32/50 | step 5250/7000
+  epoch 32/50 | step 5500/7000
+  epoch 32/50 | step 5750/7000
+  epoch 32/50 | step 6000/7000
+  epoch 32/50 | step 6250/7000
+  epoch 32/50 | step 6500/7000
+  epoch 32/50 | step 6750/7000
+  epoch 32/50 | step 7000/7000
+
+Epoch 32/50
+  Logged loss: 1.7769 (per-token: 0.0003)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 33/50 | step 250/7000
+  epoch 33/50 | step 500/7000
+  epoch 33/50 | step 750/7000
+  epoch 33/50 | step 1000/7000
+  epoch 33/50 | step 1250/7000
+  epoch 33/50 | step 1500/7000
+  epoch 33/50 | step 1750/7000
+  epoch 33/50 | step 2000/7000
+  epoch 33/50 | step 2250/7000
+  epoch 33/50 | step 2500/7000
+  epoch 33/50 | step 2750/7000
+  epoch 33/50 | step 3000/7000
+  epoch 33/50 | step 3250/7000
+  epoch 33/50 | step 3500/7000
+  epoch 33/50 | step 3750/7000
+  epoch 33/50 | step 4000/7000
+  epoch 33/50 | step 4250/7000
+  epoch 33/50 | step 4500/7000
+  epoch 33/50 | step 4750/7000
+  epoch 33/50 | step 5000/7000
+  epoch 33/50 | step 5250/7000
+  epoch 33/50 | step 5500/7000
+  epoch 33/50 | step 5750/7000
+  epoch 33/50 | step 6000/7000
+  epoch 33/50 | step 6250/7000
+  epoch 33/50 | step 6500/7000
+  epoch 33/50 | step 6750/7000
+  epoch 33/50 | step 7000/7000
+
+Epoch 33/50
+  Logged loss: 2.5081 (per-token: 0.0004)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 34/50 | step 250/7000
+  epoch 34/50 | step 500/7000
+  epoch 34/50 | step 750/7000
+  epoch 34/50 | step 1000/7000
+  epoch 34/50 | step 1250/7000
+  epoch 34/50 | step 1500/7000
+  epoch 34/50 | step 1750/7000
+  epoch 34/50 | step 2000/7000
+  epoch 34/50 | step 2250/7000
+  epoch 34/50 | step 2500/7000
+  epoch 34/50 | step 2750/7000
+  epoch 34/50 | step 3000/7000
+  epoch 34/50 | step 3250/7000
+  epoch 34/50 | step 3500/7000
+  epoch 34/50 | step 3750/7000
+  epoch 34/50 | step 4000/7000
+  epoch 34/50 | step 4250/7000
+  epoch 34/50 | step 4500/7000
+  epoch 34/50 | step 4750/7000
+  epoch 34/50 | step 5000/7000
+  epoch 34/50 | step 5250/7000
+  epoch 34/50 | step 5500/7000
+  epoch 34/50 | step 5750/7000
+  epoch 34/50 | step 6000/7000
+  epoch 34/50 | step 6250/7000
+  epoch 34/50 | step 6500/7000
+  epoch 34/50 | step 6750/7000
+  epoch 34/50 | step 7000/7000
+
+Epoch 34/50
+  Logged loss: 4.7323 (per-token: 0.0008)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 35/50 | step 250/7000
+  epoch 35/50 | step 500/7000
+  epoch 35/50 | step 750/7000
+  epoch 35/50 | step 1000/7000
+  epoch 35/50 | step 1250/7000
+  epoch 35/50 | step 1500/7000
+  epoch 35/50 | step 1750/7000
+  epoch 35/50 | step 2000/7000
+  epoch 35/50 | step 2250/7000
+  epoch 35/50 | step 2500/7000
+  epoch 35/50 | step 2750/7000
+  epoch 35/50 | step 3000/7000
+  epoch 35/50 | step 3250/7000
+  epoch 35/50 | step 3500/7000
+  epoch 35/50 | step 3750/7000
+  epoch 35/50 | step 4000/7000
+  epoch 35/50 | step 4250/7000
+  epoch 35/50 | step 4500/7000
+  epoch 35/50 | step 4750/7000
+  epoch 35/50 | step 5000/7000
+  epoch 35/50 | step 5250/7000
+  epoch 35/50 | step 5500/7000
+  epoch 35/50 | step 5750/7000
+  epoch 35/50 | step 6000/7000
+  epoch 35/50 | step 6250/7000
+  epoch 35/50 | step 6500/7000
+  epoch 35/50 | step 6750/7000
+  epoch 35/50 | step 7000/7000
+
+Epoch 35/50
+  Logged loss: 1.4777 (per-token: 0.0002)
+  Epoch time: 824.1s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 36/50 | step 250/7000
+  epoch 36/50 | step 500/7000
+  epoch 36/50 | step 750/7000
+  epoch 36/50 | step 1000/7000
+  epoch 36/50 | step 1250/7000
+  epoch 36/50 | step 1500/7000
+  epoch 36/50 | step 1750/7000
+  epoch 36/50 | step 2000/7000
+  epoch 36/50 | step 2250/7000
+  epoch 36/50 | step 2500/7000
+  epoch 36/50 | step 2750/7000
+  epoch 36/50 | step 3000/7000
+  epoch 36/50 | step 3250/7000
+  epoch 36/50 | step 3500/7000
+  epoch 36/50 | step 3750/7000
+  epoch 36/50 | step 4000/7000
+  epoch 36/50 | step 4250/7000
+  epoch 36/50 | step 4500/7000
+  epoch 36/50 | step 4750/7000
+  epoch 36/50 | step 5000/7000
+  epoch 36/50 | step 5250/7000
+  epoch 36/50 | step 5500/7000
+  epoch 36/50 | step 5750/7000
+  epoch 36/50 | step 6000/7000
+  epoch 36/50 | step 6250/7000
+  epoch 36/50 | step 6500/7000
+  epoch 36/50 | step 6750/7000
+  epoch 36/50 | step 7000/7000
+
+Epoch 36/50
+  Logged loss: 1.4741 (per-token: 0.0002)
+  Epoch time: 824.2s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 37/50 | step 250/7000
+  epoch 37/50 | step 500/7000
+  epoch 37/50 | step 750/7000
+  epoch 37/50 | step 1000/7000
+  epoch 37/50 | step 1250/7000
+  epoch 37/50 | step 1500/7000
+  epoch 37/50 | step 1750/7000
+  epoch 37/50 | step 2000/7000
+  epoch 37/50 | step 2250/7000
+  epoch 37/50 | step 2500/7000
+  epoch 37/50 | step 2750/7000
+  epoch 37/50 | step 3000/7000
+  epoch 37/50 | step 3250/7000
+  epoch 37/50 | step 3500/7000
+  epoch 37/50 | step 3750/7000
+  epoch 37/50 | step 4000/7000
+  epoch 37/50 | step 4250/7000
+  epoch 37/50 | step 4500/7000
+  epoch 37/50 | step 4750/7000
+  epoch 37/50 | step 5000/7000
+  epoch 37/50 | step 5250/7000
+  epoch 37/50 | step 5500/7000
+  epoch 37/50 | step 5750/7000
+  epoch 37/50 | step 6000/7000
+  epoch 37/50 | step 6250/7000
+  epoch 37/50 | step 6500/7000
+  epoch 37/50 | step 6750/7000
+  epoch 37/50 | step 7000/7000
+
+Epoch 37/50
+  Logged loss: 2.0605 (per-token: 0.0003)
+  Epoch time: 824.3s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 38/50 | step 250/7000
+  epoch 38/50 | step 500/7000
+  epoch 38/50 | step 750/7000
+  epoch 38/50 | step 1000/7000
+  epoch 38/50 | step 1250/7000
+  epoch 38/50 | step 1500/7000
+  epoch 38/50 | step 1750/7000
+  epoch 38/50 | step 2000/7000
+  epoch 38/50 | step 2250/7000
+  epoch 38/50 | step 2500/7000
+  epoch 38/50 | step 2750/7000
+  epoch 38/50 | step 3000/7000
+  epoch 38/50 | step 3250/7000
+  epoch 38/50 | step 3500/7000
+  epoch 38/50 | step 3750/7000
+  epoch 38/50 | step 4000/7000
+  epoch 38/50 | step 4250/7000
+  epoch 38/50 | step 4500/7000
+  epoch 38/50 | step 4750/7000
+  epoch 38/50 | step 5000/7000
+  epoch 38/50 | step 5250/7000
+  epoch 38/50 | step 5500/7000
+  epoch 38/50 | step 5750/7000
+  epoch 38/50 | step 6000/7000
+  epoch 38/50 | step 6250/7000
+  epoch 38/50 | step 6500/7000
+  epoch 38/50 | step 6750/7000
+  epoch 38/50 | step 7000/7000
+
+Epoch 38/50
+  Logged loss: 1.4910 (per-token: 0.0003)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 39/50 | step 250/7000
+  epoch 39/50 | step 500/7000
+  epoch 39/50 | step 750/7000
+  epoch 39/50 | step 1000/7000
+  epoch 39/50 | step 1250/7000
+  epoch 39/50 | step 1500/7000
+  epoch 39/50 | step 1750/7000
+  epoch 39/50 | step 2000/7000
+  epoch 39/50 | step 2250/7000
+  epoch 39/50 | step 2500/7000
+  epoch 39/50 | step 2750/7000
+  epoch 39/50 | step 3000/7000
+  epoch 39/50 | step 3250/7000
+  epoch 39/50 | step 3500/7000
+  epoch 39/50 | step 3750/7000
+  epoch 39/50 | step 4000/7000
+  epoch 39/50 | step 4250/7000
+  epoch 39/50 | step 4500/7000
+  epoch 39/50 | step 4750/7000
+  epoch 39/50 | step 5000/7000
+  epoch 39/50 | step 5250/7000
+  epoch 39/50 | step 5500/7000
+  epoch 39/50 | step 5750/7000
+  epoch 39/50 | step 6000/7000
+  epoch 39/50 | step 6250/7000
+  epoch 39/50 | step 6500/7000
+  epoch 39/50 | step 6750/7000
+  epoch 39/50 | step 7000/7000
+
+Epoch 39/50
+  Logged loss: 2.6882 (per-token: 0.0005)
+  Epoch time: 824.0s
+  Dev eval skipped this epoch (next eval at epoch 40)
+  epoch 40/50 | step 250/7000
+  epoch 40/50 | step 500/7000
+  epoch 40/50 | step 750/7000
+  epoch 40/50 | step 1000/7000
+  epoch 40/50 | step 1250/7000
+  epoch 40/50 | step 1500/7000
+  epoch 40/50 | step 1750/7000
+  epoch 40/50 | step 2000/7000
+  epoch 40/50 | step 2250/7000
+  epoch 40/50 | step 2500/7000
+  epoch 40/50 | step 2750/7000
+  epoch 40/50 | step 3000/7000
+  epoch 40/50 | step 3250/7000
+  epoch 40/50 | step 3500/7000
+  epoch 40/50 | step 3750/7000
+  epoch 40/50 | step 4000/7000
+  epoch 40/50 | step 4250/7000
+  epoch 40/50 | step 4500/7000
+  epoch 40/50 | step 4750/7000
+  epoch 40/50 | step 5000/7000
+  epoch 40/50 | step 5250/7000
+  epoch 40/50 | step 5500/7000
+  epoch 40/50 | step 5750/7000
+  epoch 40/50 | step 6000/7000
+  epoch 40/50 | step 6250/7000
+  epoch 40/50 | step 6500/7000
+  epoch 40/50 | step 6750/7000
+  epoch 40/50 | step 7000/7000
+
+Epoch 40/50
+  Logged loss: 1.1394 (per-token: 0.0002)
+  Epoch time: 824.0s
+  Token EM:   0.0368 (3.68%) [debug]
+  Norm EM:    0.0368 (3.68%) [used for checkpointing]
+  Sample prediction:
+    Q: How many singers do we have?...
+    Gold: select count ( * ) from singer...
+    Pred: select count ( * ) from stadium...
+    Token match: False
+    Normalized match: False
+  -> Saved latest checkpoint: model_latest.dy
+  epoch 41/50 | step 250/7000
+  epoch 41/50 | step 500/7000
+  epoch 41/50 | step 750/7000
+  epoch 41/50 | step 1000/7000
+  epoch 41/50 | step 1250/7000
+  epoch 41/50 | step 1500/7000
+  epoch 41/50 | step 1750/7000
+  epoch 41/50 | step 2000/7000
+  epoch 41/50 | step 2250/7000
+  epoch 41/50 | step 2500/7000
+  epoch 41/50 | step 2750/7000
+  epoch 41/50 | step 3000/7000
+  epoch 41/50 | step 3250/7000
+  epoch 41/50 | step 3500/7000
+  epoch 41/50 | step 3750/7000
+  epoch 41/50 | step 4000/7000
+  epoch 41/50 | step 4250/7000
+  epoch 41/50 | step 4500/7000
+  epoch 41/50 | step 4750/7000
+  epoch 41/50 | step 5000/7000
+  epoch 41/50 | step 5250/7000
+  epoch 41/50 | step 5500/7000
+  epoch 41/50 | step 5750/7000
+  epoch 41/50 | step 6000/7000
+  epoch 41/50 | step 6250/7000
+  epoch 41/50 | step 6500/7000
+  epoch 41/50 | step 6750/7000
+  epoch 41/50 | step 7000/7000
+
+Epoch 41/50
+  Logged loss: 3.8889 (per-token: 0.0007)
+  Epoch time: 824.3s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 42/50 | step 250/7000
+  epoch 42/50 | step 500/7000
+  epoch 42/50 | step 750/7000
+  epoch 42/50 | step 1000/7000
+  epoch 42/50 | step 1250/7000
+  epoch 42/50 | step 1500/7000
+  epoch 42/50 | step 1750/7000
+  epoch 42/50 | step 2000/7000
+  epoch 42/50 | step 2250/7000
+  epoch 42/50 | step 2500/7000
+  epoch 42/50 | step 2750/7000
+  epoch 42/50 | step 3000/7000
+  epoch 42/50 | step 3250/7000
+  epoch 42/50 | step 3500/7000
+  epoch 42/50 | step 3750/7000
+  epoch 42/50 | step 4000/7000
+  epoch 42/50 | step 4250/7000
+  epoch 42/50 | step 4500/7000
+  epoch 42/50 | step 4750/7000
+  epoch 42/50 | step 5000/7000
+  epoch 42/50 | step 5250/7000
+  epoch 42/50 | step 5500/7000
+  epoch 42/50 | step 5750/7000
+  epoch 42/50 | step 6000/7000
+  epoch 42/50 | step 6250/7000
+  epoch 42/50 | step 6500/7000
+  epoch 42/50 | step 6750/7000
+  epoch 42/50 | step 7000/7000
+
+Epoch 42/50
+  Logged loss: 3.2636 (per-token: 0.0005)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 43/50 | step 250/7000
+  epoch 43/50 | step 500/7000
+  epoch 43/50 | step 750/7000
+  epoch 43/50 | step 1000/7000
+  epoch 43/50 | step 1250/7000
+  epoch 43/50 | step 1500/7000
+  epoch 43/50 | step 1750/7000
+  epoch 43/50 | step 2000/7000
+  epoch 43/50 | step 2250/7000
+  epoch 43/50 | step 2500/7000
+  epoch 43/50 | step 2750/7000
+  epoch 43/50 | step 3000/7000
+  epoch 43/50 | step 3250/7000
+  epoch 43/50 | step 3500/7000
+  epoch 43/50 | step 3750/7000
+  epoch 43/50 | step 4000/7000
+  epoch 43/50 | step 4250/7000
+  epoch 43/50 | step 4500/7000
+  epoch 43/50 | step 4750/7000
+  epoch 43/50 | step 5000/7000
+  epoch 43/50 | step 5250/7000
+  epoch 43/50 | step 5500/7000
+  epoch 43/50 | step 5750/7000
+  epoch 43/50 | step 6000/7000
+  epoch 43/50 | step 6250/7000
+  epoch 43/50 | step 6500/7000
+  epoch 43/50 | step 6750/7000
+  epoch 43/50 | step 7000/7000
+
+Epoch 43/50
+  Logged loss: 1.9440 (per-token: 0.0003)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 44/50 | step 250/7000
+  epoch 44/50 | step 500/7000
+  epoch 44/50 | step 750/7000
+  epoch 44/50 | step 1000/7000
+  epoch 44/50 | step 1250/7000
+  epoch 44/50 | step 1500/7000
+  epoch 44/50 | step 1750/7000
+  epoch 44/50 | step 2000/7000
+  epoch 44/50 | step 2250/7000
+  epoch 44/50 | step 2500/7000
+  epoch 44/50 | step 2750/7000
+  epoch 44/50 | step 3000/7000
+  epoch 44/50 | step 3250/7000
+  epoch 44/50 | step 3500/7000
+  epoch 44/50 | step 3750/7000
+  epoch 44/50 | step 4000/7000
+  epoch 44/50 | step 4250/7000
+  epoch 44/50 | step 4500/7000
+  epoch 44/50 | step 4750/7000
+  epoch 44/50 | step 5000/7000
+  epoch 44/50 | step 5250/7000
+  epoch 44/50 | step 5500/7000
+  epoch 44/50 | step 5750/7000
+  epoch 44/50 | step 6000/7000
+  epoch 44/50 | step 6250/7000
+  epoch 44/50 | step 6500/7000
+  epoch 44/50 | step 6750/7000
+  epoch 44/50 | step 7000/7000
+
+Epoch 44/50
+  Logged loss: 2.2255 (per-token: 0.0004)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 45/50 | step 250/7000
+  epoch 45/50 | step 500/7000
+  epoch 45/50 | step 750/7000
+  epoch 45/50 | step 1000/7000
+  epoch 45/50 | step 1250/7000
+  epoch 45/50 | step 1500/7000
+  epoch 45/50 | step 1750/7000
+  epoch 45/50 | step 2000/7000
+  epoch 45/50 | step 2250/7000
+  epoch 45/50 | step 2500/7000
+  epoch 45/50 | step 2750/7000
+  epoch 45/50 | step 3000/7000
+  epoch 45/50 | step 3250/7000
+  epoch 45/50 | step 3500/7000
+  epoch 45/50 | step 3750/7000
+  epoch 45/50 | step 4000/7000
+  epoch 45/50 | step 4250/7000
+  epoch 45/50 | step 4500/7000
+  epoch 45/50 | step 4750/7000
+  epoch 45/50 | step 5000/7000
+  epoch 45/50 | step 5250/7000
+  epoch 45/50 | step 5500/7000
+  epoch 45/50 | step 5750/7000
+  epoch 45/50 | step 6000/7000
+  epoch 45/50 | step 6250/7000
+  epoch 45/50 | step 6500/7000
+  epoch 45/50 | step 6750/7000
+  epoch 45/50 | step 7000/7000
+
+Epoch 45/50
+  Logged loss: 3.3190 (per-token: 0.0006)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 46/50 | step 250/7000
+  epoch 46/50 | step 500/7000
+  epoch 46/50 | step 750/7000
+  epoch 46/50 | step 1000/7000
+  epoch 46/50 | step 1250/7000
+  epoch 46/50 | step 1500/7000
+  epoch 46/50 | step 1750/7000
+  epoch 46/50 | step 2000/7000
+  epoch 46/50 | step 2250/7000
+  epoch 46/50 | step 2500/7000
+  epoch 46/50 | step 2750/7000
+  epoch 46/50 | step 3000/7000
+  epoch 46/50 | step 3250/7000
+  epoch 46/50 | step 3500/7000
+  epoch 46/50 | step 3750/7000
+  epoch 46/50 | step 4000/7000
+  epoch 46/50 | step 4250/7000
+  epoch 46/50 | step 4500/7000
+  epoch 46/50 | step 4750/7000
+  epoch 46/50 | step 5000/7000
+  epoch 46/50 | step 5250/7000
+  epoch 46/50 | step 5500/7000
+  epoch 46/50 | step 5750/7000
+  epoch 46/50 | step 6000/7000
+  epoch 46/50 | step 6250/7000
+  epoch 46/50 | step 6500/7000
+  epoch 46/50 | step 6750/7000
+  epoch 46/50 | step 7000/7000
+
+Epoch 46/50
+  Logged loss: 1.6228 (per-token: 0.0003)
+  Epoch time: 824.3s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 47/50 | step 250/7000
+  epoch 47/50 | step 500/7000
+  epoch 47/50 | step 750/7000
+  epoch 47/50 | step 1000/7000
+  epoch 47/50 | step 1250/7000
+  epoch 47/50 | step 1500/7000
+  epoch 47/50 | step 1750/7000
+  epoch 47/50 | step 2000/7000
+  epoch 47/50 | step 2250/7000
+  epoch 47/50 | step 2500/7000
+  epoch 47/50 | step 2750/7000
+  epoch 47/50 | step 3000/7000
+  epoch 47/50 | step 3250/7000
+  epoch 47/50 | step 3500/7000
+  epoch 47/50 | step 3750/7000
+  epoch 47/50 | step 4000/7000
+  epoch 47/50 | step 4250/7000
+  epoch 47/50 | step 4500/7000
+  epoch 47/50 | step 4750/7000
+  epoch 47/50 | step 5000/7000
+  epoch 47/50 | step 5250/7000
+  epoch 47/50 | step 5500/7000
+  epoch 47/50 | step 5750/7000
+  epoch 47/50 | step 6000/7000
+  epoch 47/50 | step 6250/7000
+  epoch 47/50 | step 6500/7000
+  epoch 47/50 | step 6750/7000
+  epoch 47/50 | step 7000/7000
+
+Epoch 47/50
+  Logged loss: 3.2877 (per-token: 0.0006)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 48/50 | step 250/7000
+  epoch 48/50 | step 500/7000
+  epoch 48/50 | step 750/7000
+  epoch 48/50 | step 1000/7000
+  epoch 48/50 | step 1250/7000
+  epoch 48/50 | step 1500/7000
+  epoch 48/50 | step 1750/7000
+  epoch 48/50 | step 2000/7000
+  epoch 48/50 | step 2250/7000
+  epoch 48/50 | step 2500/7000
+  epoch 48/50 | step 2750/7000
+  epoch 48/50 | step 3000/7000
+  epoch 48/50 | step 3250/7000
+  epoch 48/50 | step 3500/7000
+  epoch 48/50 | step 3750/7000
+  epoch 48/50 | step 4000/7000
+  epoch 48/50 | step 4250/7000
+  epoch 48/50 | step 4500/7000
+  epoch 48/50 | step 4750/7000
+  epoch 48/50 | step 5000/7000
+  epoch 48/50 | step 5250/7000
+  epoch 48/50 | step 5500/7000
+  epoch 48/50 | step 5750/7000
+  epoch 48/50 | step 6000/7000
+  epoch 48/50 | step 6250/7000
+  epoch 48/50 | step 6500/7000
+  epoch 48/50 | step 6750/7000
+  epoch 48/50 | step 7000/7000
+
+Epoch 48/50
+  Logged loss: 2.1993 (per-token: 0.0004)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 49/50 | step 250/7000
+  epoch 49/50 | step 500/7000
+  epoch 49/50 | step 750/7000
+  epoch 49/50 | step 1000/7000
+  epoch 49/50 | step 1250/7000
+  epoch 49/50 | step 1500/7000
+  epoch 49/50 | step 1750/7000
+  epoch 49/50 | step 2000/7000
+  epoch 49/50 | step 2250/7000
+  epoch 49/50 | step 2500/7000
+  epoch 49/50 | step 2750/7000
+  epoch 49/50 | step 3000/7000
+  epoch 49/50 | step 3250/7000
+  epoch 49/50 | step 3500/7000
+  epoch 49/50 | step 3750/7000
+  epoch 49/50 | step 4000/7000
+  epoch 49/50 | step 4250/7000
+  epoch 49/50 | step 4500/7000
+  epoch 49/50 | step 4750/7000
+  epoch 49/50 | step 5000/7000
+  epoch 49/50 | step 5250/7000
+  epoch 49/50 | step 5500/7000
+  epoch 49/50 | step 5750/7000
+  epoch 49/50 | step 6000/7000
+  epoch 49/50 | step 6250/7000
+  epoch 49/50 | step 6500/7000
+  epoch 49/50 | step 6750/7000
+  epoch 49/50 | step 7000/7000
+
+Epoch 49/50
+  Logged loss: 3.1995 (per-token: 0.0005)
+  Epoch time: 824.4s
+  Dev eval skipped this epoch (next eval at epoch 50)
+  epoch 50/50 | step 250/7000
+  epoch 50/50 | step 500/7000
+  epoch 50/50 | step 750/7000
+  epoch 50/50 | step 1000/7000
+  epoch 50/50 | step 1250/7000
+  epoch 50/50 | step 1500/7000
+  epoch 50/50 | step 1750/7000
+  epoch 50/50 | step 2000/7000
+  epoch 50/50 | step 2250/7000
+  epoch 50/50 | step 2500/7000
+  epoch 50/50 | step 2750/7000
+  epoch 50/50 | step 3000/7000
+  epoch 50/50 | step 3250/7000
+  epoch 50/50 | step 3500/7000
+  epoch 50/50 | step 3750/7000
+  epoch 50/50 | step 4000/7000
+  epoch 50/50 | step 4250/7000
+  epoch 50/50 | step 4500/7000
+  epoch 50/50 | step 4750/7000
+  epoch 50/50 | step 5000/7000
+  epoch 50/50 | step 5250/7000
+  epoch 50/50 | step 5500/7000
+  epoch 50/50 | step 5750/7000
+  epoch 50/50 | step 6000/7000
+  epoch 50/50 | step 6250/7000
+  epoch 50/50 | step 6500/7000
+  epoch 50/50 | step 6750/7000
+  epoch 50/50 | step 7000/7000
+
+Epoch 50/50
+  Logged loss: 3.4633 (per-token: 0.0006)
+  Epoch time: 824.5s
+  Token EM:   0.0455 (4.55%) [debug]
+  Norm EM:    0.0455 (4.55%) [used for checkpointing]
+  Sample prediction:
+    Q: How many singers do we have?...
+    Gold: select count ( * ) from singer...
+    Pred: select count ( * ) from stadium...
+    Token match: False
+    Normalized match: False
+  -> Saved latest checkpoint: model_latest.dy
+
+======================================================================
+Training complete.
+  Best normalized EM: 0.0474 (4.74%)
+  Best checkpoint:    /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/checkpoints/model_best.dy
+  Latest checkpoint:  /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/checkpoints/model_latest.dy
+  Final checkpoint:    /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/checkpoints/model_final.dy
+======================================================================

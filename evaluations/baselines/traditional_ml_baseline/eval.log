@@ -1,0 +1,188 @@
+[dynet] initializing CUDA
+[dynet] CUDA driver/runtime versions are 13.0/13.0
+Request for 1 GPU ...
+[dynet] Device Number: 0
+[dynet]   Device name: NVIDIA A100-SXM4-80GB
+[dynet]   Memory Bus Width (bits): 5120
+[dynet]   Memory Free (GB): 84.6481/85.0948
+[dynet]
+[dynet] Device(s) selected: 0
+[dynet] random seed: 2708880794
+[dynet] allocating memory: 4096MB
+[dynet] memory allocation done.
+Loading vocabularies...
+  Source vocab size: 4871
+  Target vocab size: 2822
+Loading dev dataset...
+  Dev data: /home/nvikrama/SWM/SWM/modules/traditional_baseline_dynet/processed/spider_dev_processed.jsonl
+  Total dev examples: 1034
+  Spider DB dir: /home/nvikrama/SWM/spider_data/database (found)
+  Evaluating 1034 examples
+
+Initializing model...
+  embed_dim=256, hidden_dim=256
+  Beam size: 1
+Loading checkpoint: checkpoints/model_best.dy
+  Checkpoint loaded successfully.
+
+Evaluating...
+  Using greedy decoding
+======================================================================
+
+Sample Predictions (10 examples):
+======================================================================
+
+[1] Example 0 | db_id: concert_singer
+  Question:      How many singers do we have?
+  Gold SQL:      SELECT count(*) FROM singer
+  Pred SQL:      select count ( * ) from stadium
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  True
+  Exec Acc:      False
+  OOV tokens:    ['many', 'singers', 'do', 'we', 'have']...
+
+[2] Example 1 | db_id: concert_singer
+  Question:      What is the total number of singers?
+  Gold SQL:      SELECT count(*) FROM singer
+  Pred SQL:      select count ( * ) from concert
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  True
+  Exec Acc:      True
+  OOV tokens:    ['what', 'is', 'number', 'singers', '?']...
+
+[3] Example 2 | db_id: concert_singer
+  Question:      Show name, country, age for all singers ordered by age from the oldest to the youngest.
+  Gold SQL:      SELECT name ,  country ,  age FROM singer ORDER BY age DESC
+  Pred SQL:      select name , country , age from stadium order by age desc
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: country
+  Exec Error:    Pred SQL error: no such column: country
+  OOV tokens:    ['for', 'all', 'singers', 'ordered', 'oldest']...
+
+[4] Example 3 | db_id: concert_singer
+  Question:      What are the names, countries, and ages for every singer in descending order of age?
+  Gold SQL:      SELECT name ,  country ,  age FROM singer ORDER BY age DESC
+  Pred SQL:      select name , age from stadium order by age desc
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: age
+  Exec Error:    Pred SQL error: no such column: age
+  OOV tokens:    ['what', 'are', 'names', 'ages', 'for']...
+
+[5] Example 4 | db_id: concert_singer
+  Question:      What is the average, minimum, and maximum age of all singers from France?
+  Gold SQL:      SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'
+  Pred SQL:      select avg ( age ) , min ( age ) , max ( age ) from stadium
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: age
+  Exec Error:    Pred SQL error: no such column: age
+  OOV tokens:    ['what', 'is', 'average', 'minimum', 'maximum']...
+
+[6] Example 5 | db_id: concert_singer
+  Question:      What is the average, minimum, and maximum age for all French singers?
+  Gold SQL:      SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'
+  Pred SQL:      select avg ( age ) , min ( age ) , max ( age ) from stadium
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: age
+  Exec Error:    Pred SQL error: no such column: age
+  OOV tokens:    ['what', 'is', 'average', 'minimum', 'maximum']...
+
+[7] Example 6 | db_id: concert_singer
+  Question:      Show the name and the release year of the song by the youngest singer.
+  Gold SQL:      SELECT song_name ,  song_release_year FROM singer ORDER BY age LIMIT 1
+  Pred SQL:      select t2 . name , t2 . year from concert as t1 join singer as t2 on t1 . singer_id = t2 . singer_id order by t1 . year limit 1
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: t2.year
+  Exec Error:    Pred SQL error: no such column: t2.year
+  Suspicious:    ['t2', 't2', 't1', 't2', 't1', 't2', 't1']
+  OOV tokens:    ['release', 'youngest', 'singer', '[sep]', 'highest']...
+
+[8] Example 7 | db_id: concert_singer
+  Question:      What are the names and release years for all the songs of the youngest singer?
+  Gold SQL:      SELECT song_name ,  song_release_year FROM singer ORDER BY age LIMIT 1
+  Pred SQL:      select t2 . name , t2 . lowest from concert as t1 join singer as t2 on t1 . stadium_id = t2 . stadium_id join singer as t3 on t1 . concert_id = t3 . stadium_id where t3 . lowest = ( select min ( age ) from stadium )
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: t2.lowest
+  Exec Error:    Pred SQL error: no such column: t2.lowest
+  Suspicious:    ['t2', 't2', 't1', 't2', 't1', 't2', 't3', 't1', 't3', 't3']
+  OOV tokens:    ['what', 'are', 'names', 'release', 'years']...
+
+[9] Example 8 | db_id: concert_singer
+  Question:      What are all distinct countries where singers above age 20 are from?
+  Gold SQL:      SELECT DISTINCT country FROM singer WHERE age  >  20
+  Pred SQL:      select distinct country from stadium where age > 20
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: country
+  Exec Error:    Pred SQL error: no such column: country
+  OOV tokens:    ['what', 'are', 'all', 'singers', 'above']...
+
+[10] Example 9 | db_id: concert_singer
+  Question:      What are  the different countries with singers above age 20?
+  Gold SQL:      SELECT DISTINCT country FROM singer WHERE age  >  20
+  Pred SQL:      select distinct country from stadium where age > 20
+  Token EM:      False  [debug]
+  Normalized EM: False
+  Syntax Valid:  False
+  Exec Acc:      False
+  Syntax Error:  no such column: country
+  Exec Error:    Pred SQL error: no such column: country
+  OOV tokens:    ['what', 'are', 'different', 'singers', 'above']...
+
+======================================================================
+EVALUATION SUMMARY
+======================================================================
+  Examples evaluated: 1034
+  Normalized EM:        49/1034 = 0.0474 ( 4.74%)
+  Token-level EM:       49/1034 = 0.0474 ( 4.74%)  [debug]
+  Syntax Validity:     311/1034 = 0.3008 (30.08%)
+  Execution Accuracy:   82/1034 = 0.0793 ( 7.93%)
+
+  WARNING: 2 gold SQL queries failed to execute
+======================================================================
+
+Syntax Error Breakdown (723 invalid):
+   654 | no such column
+    31 | syntax error
+    15 | incomplete input
+     9 | unrecognized token: "18_49_rating_share"
+     4 | unrecognized token: "') LIMIT 0"
+     3 | no such table
+     2 | unrecognized token: "") LIMIT 0"
+     1 | unrecognized token: "' group by cylinder
+     1 | unrecognized token: "" ` ` ` ` lever ') 
+     1 | unrecognized token: "' order by first_na
+
+Execution Error Breakdown (723 pred SQL failed):
+   652 | no such column
+    30 | syntax error
+    16 | Pred SQL error: incomplete input
+     9 | Pred SQL error: unrecognized token: "18_
+     4 | Pred SQL error: unrecognized token: "'"
+     3 | no such table
+     2 | Gold SQL error: Could not decode to UTF-
+     2 | Pred SQL error: unrecognized token: """
+     1 | Pred SQL error: unrecognized token: "' g
+     1 | Pred SQL error: unrecognized token: "" `
+
