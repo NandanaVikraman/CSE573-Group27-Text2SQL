@@ -2,6 +2,8 @@
 
 Natural language to SQL translation using an iterative LLM-Modulo verification loop. Evaluated on the Spider and BIRD benchmarks.
 
+Full report and demo slides: [`docs/Final_Report.pdf`](docs/Final_Report.pdf), [`docs/Demo_Presentation.pdf`](docs/Demo_Presentation.pdf)
+
 > **Note:** This is a personal copy of a team project built for CSE 573 at Arizona State University, hosted here for portfolio purposes. All code was developed collaboratively by the six team members listed below; see the [original repository](https://github.com/AbhinavGor/CSE573-Group27-Text2SQL) for the canonical version and full commit history.
 
 ## Team Members
